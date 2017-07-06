@@ -1,0 +1,6 @@
+framework module Pods_Storekeeper {
+  umbrella header "Pods-Storekeeper-umbrella.h"
+
+  export *
+  module * { export * }
+}

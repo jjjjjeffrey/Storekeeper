@@ -1,0 +1,48 @@
+PODS:
+  - AFDateHelper (4.2.2)
+  - Alamofire (4.5.0)
+  - FileKit (4.0.1)
+  - HandyJSON (1.7.2)
+  - IBAnimatable (4.1.0)
+  - JeffreyKit (0.4.2):
+    - JeffreyKit/HTTPKit (= 0.4.2)
+    - JeffreyKit/NotificationKit (= 0.4.2)
+    - JeffreyKit/TableView (= 0.4.2)
+  - JeffreyKit/HTTPKit (0.4.2)
+  - JeffreyKit/NotificationKit (0.4.2)
+  - JeffreyKit/TableView (0.4.2)
+  - Kingfisher (3.10.3)
+  - PKHUD (4.2.3)
+  - SnapKit (3.2.0)
+  - SwifterSwift (1.6.4)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - AFDateHelper (~> 4.0)
+  - Alamofire (~> 4.0)
+  - FileKit (~> 4.0)
+  - HandyJSON (~> 1.0)
+  - IBAnimatable (~> 4.0)
+  - JeffreyKit (~> 0.4.2)
+  - Kingfisher (~> 3.0)
+  - PKHUD (~> 4.0)
+  - SnapKit (~> 3.0)
+  - SwifterSwift (~> 1.0)
+  - SwiftyJSON (~> 3.0)
+
+SPEC CHECKSUMS:
+  AFDateHelper: 0f9588a442b4d7ef862568ae5d40ab883672efb5
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  FileKit: 1ea916f594bc0bb9a3951f80edf92b52bb7f883c
+  HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
+  IBAnimatable: 0fd2c9fd38c4798d71bcc18dbd87d473a7df2577
+  JeffreyKit: 9c3eb2080582edbe6c5c043c450c2ccaa6869c81
+  Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
+  PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 1cb550de5771610b3cbf21b941574ec27f90dc5f
+
+COCOAPODS: 1.2.1
