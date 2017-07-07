@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwifterSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UINavigationBar.appearance().shadowImage = UIImage()
 //        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         
-//        window?.tintColor = UIColor.white
+        window?.tintColor = UIColor(hex: 0xFF2D55)
         
         return true
     }

@@ -10,6 +10,7 @@
 		067502D4EAFB9B8A606BA02D /* Pods_Storekeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FE374A72EC55F6C95DDCA2 /* Pods_Storekeeper.framework */; };
 		7B2BFE621F0E1C5900F0FDB4 /* Sale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2BFE611F0E1C5900F0FDB4 /* Sale.storyboard */; };
 		7B2BFE641F0E240300F0FDB4 /* BarcodeSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */; };
+		7B2BFE841F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */; };
 		7B3617971F0E12B4004E7850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3617961F0E12B4004E7850 /* AppDelegate.swift */; };
 		7B3617991F0E12B4004E7850 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3617981F0E12B4004E7850 /* ViewController.swift */; };
 		7B36179C1F0E12B4004E7850 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179A1F0E12B4004E7850 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		39FE374A72EC55F6C95DDCA2 /* Pods_Storekeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storekeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B2BFE611F0E1C5900F0FDB4 /* Sale.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sale.storyboard; sourceTree = "<group>"; };
 		7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeSaleViewController.swift; sourceTree = "<group>"; };
+		7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCategoryPickerViewController.swift; sourceTree = "<group>"; };
 		7B3617931F0E12B4004E7850 /* Storekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3617961F0E12B4004E7850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B3617981F0E12B4004E7850 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				7B3617981F0E12B4004E7850 /* ViewController.swift */,
 				7BA612E41F0E74BE0066017F /* SaleViewController.swift */,
 				7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */,
+				7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */,
 				7B2BFE611F0E1C5900F0FDB4 /* Sale.storyboard */,
 				7B36179A1F0E12B4004E7850 /* Main.storyboard */,
 				7B36179D1F0E12B4004E7850 /* Assets.xcassets */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B2BFE841F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift in Sources */,
 				7B2BFE641F0E240300F0FDB4 /* BarcodeSaleViewController.swift in Sources */,
 				7B3617991F0E12B4004E7850 /* ViewController.swift in Sources */,
 				7B3617971F0E12B4004E7850 /* AppDelegate.swift in Sources */,
