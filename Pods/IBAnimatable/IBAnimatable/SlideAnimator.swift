@@ -18,16 +18,34 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
   fileprivate var isReverse = false
   fileprivate var isFade = false
 
-  public init(from direction: TransitionAnimationType.Direction, isFade: Bool, duration: Duration) {
+  public init(from direction: TransitionAnimationType.Direction, isFade: Bool, transitionDuration: Duration) {
     fromDirection = direction
-    transitionDuration = duration
+    self.transitionDuration = transitionDuration
     self.isFade = isFade
     isHorizontal = fromDirection.isHorizontal
-    transitionAnimationType = .slide(to: direction, isFade: isFade)
-    reverseAnimationType = .slide(to: direction.opposite, isFade: isFade)
-    interactiveGestureType = .pan(from: direction.matchingGesture)
-    isReverse = direction == .right || direction == .bottom
 
+    switch fromDirection {
+    case .right:
+      self.transitionAnimationType = .slide(to: .right, isFade: isFade)
+      self.reverseAnimationType = .slide(to: .left, isFade: isFade)
+      self.interactiveGestureType = .pan(from: .right)
+      isReverse = true
+    case .top:
+      self.transitionAnimationType = .slide(to: .top, isFade: isFade)
+      self.reverseAnimationType = .slide(to: .bottom, isFade: isFade)
+      self.interactiveGestureType = .pan(from: .top)
+      isReverse = false
+    case .bottom:
+      self.transitionAnimationType = .slide(to: .bottom, isFade: isFade)
+      self.reverseAnimationType = .slide(to: .top, isFade: isFade)
+      self.interactiveGestureType = .pan(from: .bottom)
+      isReverse = true
+    default:
+      self.transitionAnimationType = .slide(to: .left, isFade: isFade)
+      self.reverseAnimationType = .slide(to: .right, isFade: isFade)
+      self.interactiveGestureType = .pan(from: .left)
+      isReverse = false
+    }
     super.init()
   }
 }
@@ -45,15 +63,13 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
     }
 
     let travelDistance = isHorizontal ? containerView.bounds.width : containerView.bounds.height
-    let travel = CGAffineTransform(translationX: isHorizontal ? (isReverse ? travelDistance : -travelDistance) : 0,
-                                   y: isHorizontal ? 0 : (isReverse ? travelDistance : -travelDistance))
+    let travel = CGAffineTransform(translationX: isHorizontal ? (isReverse ? travelDistance : -travelDistance) : 0, y: isHorizontal ? 0 : (isReverse ? travelDistance : -travelDistance))
     containerView.addSubview(toView)
     if isFade {
       toView.alpha = 0
     }
     toView.transform = travel.inverted()
     animateSlideTransition(toView: toView, fromView: fromView, travel: travel) {
-      toView.transform = CGAffineTransform.identity
       fromView.transform = CGAffineTransform.identity
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }

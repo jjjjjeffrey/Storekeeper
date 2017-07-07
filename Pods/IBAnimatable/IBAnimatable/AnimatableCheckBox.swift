@@ -6,9 +6,7 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, FillDesignable,
-                                         BorderDesignable, ShadowDesignable, MaskDesignable,
-                                         Animatable {
+open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, MaskDesignable, Animatable {
 
   // MARK: - CheckBoxDesignable
   @IBInspectable open var checked: Bool = false {
@@ -36,7 +34,7 @@ open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, F
     }
   }
 
-  open var cornerSides: CornerSides  = .allSides {
+  open var cornerSides: CornerSides  = .AllSides {
     didSet {
       configureCornerRadius()
     }
@@ -136,7 +134,7 @@ open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, F
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
     didSet {
-      configureMask(previousMaskType: oldValue)
+      configureMask()
       configureBorder()
     }
   }
@@ -201,7 +199,7 @@ open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, F
   }
 
   fileprivate func configureAfterLayoutSubviews() {
-    configureMask(previousMaskType: maskType)
+    configureMask()
     configureCornerRadius()
     configureBorder()
   }

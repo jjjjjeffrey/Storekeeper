@@ -12,7 +12,7 @@ target 'Storekeeper' do
   pod 'Kingfisher', '~> 3.0'
   pod 'SwiftyJSON', '~> 3.0'
   pod 'PKHUD', '~> 4.0'
-  pod 'IBAnimatable', '~> 4.0'
+  pod 'IBAnimatable', '~> 3.0'
   pod 'AFDateHelper', '~> 4.0'
   pod 'HandyJSON', '~> 1.0'
   pod 'FileKit', '~> 4.0'

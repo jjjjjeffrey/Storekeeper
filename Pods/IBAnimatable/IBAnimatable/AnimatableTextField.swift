@@ -6,9 +6,7 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, BorderDesignable,
-                                             ShadowDesignable, PaddingDesignable, SideImageDesignable, PlaceholderDesignable,
-                                             Animatable {
+open class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, PaddingDesignable, SideImageDesignable, PlaceholderDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
@@ -17,7 +15,7 @@ open class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, B
     }
   }
 
-  open var cornerSides: CornerSides  = .allSides {
+  open var cornerSides: CornerSides  = .AllSides {
     didSet {
       configureCornerRadius()
     }
@@ -134,53 +132,15 @@ open class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, B
   }
 
   // MARK: - SideImageDesignable
-  @IBInspectable open var leftImage: UIImage? {
-    didSet {
-      configureImages()
-    }
-  }
+  @IBInspectable open var leftImage: UIImage?
+  @IBInspectable open var leftImageLeftPadding: CGFloat = CGFloat.nan
+  @IBInspectable open var leftImageRightPadding: CGFloat = CGFloat.nan
+  @IBInspectable open var leftImageTopPadding: CGFloat = CGFloat.nan
 
-  @IBInspectable open var leftImageLeftPadding: CGFloat = CGFloat.nan {
-    didSet {
-      configureImages()
-    }
-  }
-
-  @IBInspectable open var leftImageRightPadding: CGFloat = CGFloat.nan {
-    didSet {
-      configureImages()
-    }
-  }
-
-  @IBInspectable open var leftImageTopPadding: CGFloat = CGFloat.nan {
-    didSet {
-      configureImages()
-    }
-  }
-
-  @IBInspectable open var rightImage: UIImage? {
-    didSet {
-      configureImages()
-    }
-  }
-
-  @IBInspectable open var rightImageLeftPadding: CGFloat = CGFloat.nan {
-    didSet {
-      configureImages()
-    }
-  }
-
-  @IBInspectable open var rightImageRightPadding: CGFloat = CGFloat.nan {
-    didSet {
-      configureImages()
-    }
-  }
-
-  @IBInspectable open var rightImageTopPadding: CGFloat = CGFloat.nan {
-    didSet {
-      configureImages()
-    }
-  }
+  @IBInspectable open var rightImage: UIImage?
+  @IBInspectable open var rightImageLeftPadding: CGFloat = CGFloat.nan
+  @IBInspectable open var rightImageRightPadding: CGFloat = CGFloat.nan
+  @IBInspectable open var rightImageTopPadding: CGFloat = CGFloat.nan
 
   // MARK: - CSSPlaceholderable
   @IBInspectable open var placeholderColor: UIColor? {

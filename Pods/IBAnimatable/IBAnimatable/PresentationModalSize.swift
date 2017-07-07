@@ -42,7 +42,9 @@ public extension PresentationModalSize {
       return nil
     }
 
-    let (name, params) = PresentationModalSize.extractNameAndParams(from: string)
+    let nameANdParams = PresentationModalSize.extractNameAndParams(from: string)
+    let name = nameANdParams.name
+    let params = nameANdParams.params
     switch name {
       case "half":
       self = .half
