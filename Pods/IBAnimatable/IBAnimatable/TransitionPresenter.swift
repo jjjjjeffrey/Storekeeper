@@ -33,9 +33,7 @@ public class TransitionPresenter: NSObject {
   // interaction controller
   fileprivate var interactiveAnimator: InteractiveAnimator?
 
-  public init(transitionAnimationType: TransitionAnimationType,
-              transitionDuration: Duration = defaultTransitionDuration,
-              interactiveGestureType: InteractiveGestureType? = nil) {
+  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
     super.init()
@@ -61,12 +59,10 @@ public class TransitionPresenter: NSObject {
       switch interactiveGestureType {
       case .default:
         if let interactiveGestureType = animator?.interactiveGestureType {
-          interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType,
-                                                                                   transitionType: .presentationTransition(.dismissal))
+          interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .presentationTransition(.dismissal))
         }
       default:
-        interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType,
-                                                                                 transitionType: .presentationTransition(.dismissal))
+        interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .presentationTransition(.dismissal))
       }
     } else {
       interactiveAnimator = nil
@@ -77,9 +73,7 @@ public class TransitionPresenter: NSObject {
 extension TransitionPresenter: UIViewControllerTransitioningDelegate {
 
   // MARK: - animation controller
-  public func animationController(forPresented presented: UIViewController,
-                                  presenting: UIViewController,
-                                  source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animator?.transitionDuration = transitionDuration
     interactiveAnimator?.connectGestureRecognizer(to: presented)
     return animator

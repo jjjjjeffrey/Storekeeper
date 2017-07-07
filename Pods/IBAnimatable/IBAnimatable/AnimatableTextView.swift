@@ -15,7 +15,7 @@ open class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, Bor
     }
   }
 
-  open var cornerSides: CornerSides  = .allSides {
+  open var cornerSides: CornerSides  = .AllSides {
     didSet {
       configureCornerRadius()
     }

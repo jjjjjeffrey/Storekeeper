@@ -6,7 +6,7 @@
 import UIKit
 
 /// Protocol for all activity indicator classes.
-public protocol ActivityIndicatorAnimating: class {
+public protocol ActivityIndicatorAnimating {
   /**
    Define the animation for the activity indicator.
 

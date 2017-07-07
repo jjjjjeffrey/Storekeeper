@@ -20,7 +20,8 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
     let beginTimes = [0.5, 0.25, 0, 0.25, 0.5]
-    let animation = defaultAnimation
+
+    let animation = self.animation
     for i in 0 ..< 5 {
       let line = ActivityIndicatorShape.line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i),
@@ -40,7 +41,7 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
 
 private extension ActivityIndicatorAnimationLineScalePulseOutRapid {
 
-  var defaultAnimation: CAKeyframeAnimation {
+  var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")
     animation.keyTimes = [0, 0.8, 0.9]
     animation.timingFunctions = [timingFunction, timingFunction]

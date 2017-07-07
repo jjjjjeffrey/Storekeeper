@@ -22,12 +22,12 @@ public protocol Animatable: class {
   /**
    Animation duration (in seconds)
    */
-  var duration: TimeInterval { get set }
+  var duration: Double { get set }
 
   /**
    Animation delay (in seconds, default value should be 0)
    */
-  var delay: TimeInterval { get set }
+  var delay: Double { get set }
 
   /**
    Spring animation damping (0 ~ 1, default value should be 0.7)
@@ -66,62 +66,44 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  @discardableResult
-  public func animate(_ animation: AnimationType,
-                      duration: TimeInterval? = nil,
-                      damping: CGFloat? = nil,
-                      velocity: CGFloat? = nil,
-                      force: CGFloat? = nil) -> AnimationPromise<Self> {
-    return AnimationPromise(view: self).delay(delay).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
-  }
-
-  public func delay(_ delay: TimeInterval) -> AnimationPromise<Self> {
-    let promise = AnimationPromise(view: self)
-    return promise.delay(delay)
-
-  }
-
-  internal func doAnimation(_ animation: AnimationType? = nil, configuration: AnimationConfiguration, promise: AnimationPromise<Self>) {
-    let completion = {
-      promise.animationCompleted()
-    }
+  public func animate(animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {
     switch animation ?? animationType {
     case let .slide(way, direction):
-      slide(way, direction: direction, configuration: configuration, completion: completion)
+      slide(way, direction: direction, completion: completion)
     case let .squeeze(way, direction):
-      squeeze(way, direction: direction, configuration: configuration, completion: completion)
+      squeeze(way, direction: direction, completion: completion)
     case let .squeezeFade(way, direction):
-      squeezeFade(way, direction: direction, configuration: configuration, completion: completion)
+      squeezeFade(way, direction: direction, completion: completion)
     case let .slideFade(way, direction):
-      slideFade(way, direction: direction, configuration: configuration, completion: completion)
+      slideFade(way, direction: direction, completion: completion)
     case let .fade(way):
-      fade(way, configuration: configuration, completion: completion)
+      fade(way, completion: completion)
     case let .zoom(way):
-      zoom(way, configuration: configuration, completion: completion)
+      zoom(way, completion: completion)
     case let .zoomInvert(way):
-      zoom(way, invert: true, configuration: configuration, completion: completion)
+      zoom(way, invert: true, completion: completion)
     case let .shake(repeatCount):
-      shake(repeatCount: repeatCount, configuration: configuration, completion: completion)
+      shake(repeatCount: repeatCount, completion: completion)
     case let .pop(repeatCount):
-      pop(repeatCount: repeatCount, configuration: configuration, completion: completion)
+      pop(repeatCount: repeatCount, completion: completion)
     case let .squash(repeatCount):
-      squash(repeatCount: repeatCount, configuration: configuration, completion: completion)
+      squash(repeatCount: repeatCount, completion: completion)
     case let .flip(axis):
-      flip(axis: axis, configuration: configuration, completion: completion)
+      flip(axis: axis, completion: completion)
     case let .morph(repeatCount):
-      morph(repeatCount: repeatCount, configuration: configuration, completion: completion)
+      morph(repeatCount: repeatCount, completion: completion)
     case let .flash(repeatCount):
-      flash(repeatCount: repeatCount, configuration: configuration, completion: completion)
+      flash(repeatCount: repeatCount, completion: completion)
     case let .wobble(repeatCount):
-      wobble(repeatCount: repeatCount, configuration: configuration, completion: completion)
+      wobble(repeatCount: repeatCount, completion: completion)
     case let .swing(repeatCount):
-      swing(repeatCount: repeatCount, configuration: configuration, completion: completion)
+      swing(repeatCount: repeatCount, completion: completion)
     case let .rotate(direction, repeatCount):
-      rotate(direction: direction, repeatCount: repeatCount, configuration: configuration, completion: completion)
+      rotate(direction: direction, repeatCount: repeatCount, completion: completion)
     case let .moveBy(x, y):
-      moveBy(x: x, y: y, configuration: configuration, completion: completion)
+      moveBy(x: x, y: y, completion: completion)
     case let .moveTo(x, y):
-      moveTo(x: x, y: y, configuration: configuration, completion: completion)
+      moveTo(x: x, y: y, completion: completion)
     case .none:
       break
     }
@@ -133,56 +115,47 @@ public extension Animatable where Self: UIView {
   func autoRunAnimation() {
     if autoRun {
       autoRun = false
-      animate(animationType)
+      animate()
     }
   }
-}
-
-fileprivate extension Animatable where Self: UIView {
 
   // MARK: - Animation methods
-  func slide(_ way: AnimationType.Way, direction: AnimationType.Direction,
-             configuration: AnimationConfiguration,
-             completion: AnimatableCompletion? = nil) {
-    let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
+  public func slide(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+    let values = computeValues(way: way, direction: direction, shouldScale: false)
     switch way {
     case .in:
-
-      animateIn(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
+      animateIn(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, completion: completion)
     case .out:
-      animateOut(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
+      animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, completion: completion)
     }
   }
 
-  func squeeze(_ way: AnimationType.Way, direction: AnimationType.Direction,
-               configuration: AnimationConfiguration,
-               completion: AnimatableCompletion? = nil) {
-    let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: true)
+  public func squeeze(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+    let values = computeValues(way: way, direction: direction, shouldScale: true)
     switch way {
     case .in:
-      animateIn(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
+      animateIn(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, completion: completion)
     case .out:
-      animateOut(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
+      animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, completion: completion)
     }
   }
 
-  func rotate(direction: AnimationType.RotationDirection, repeatCount: Int,
-              configuration: AnimationConfiguration,
-              completion: AnimatableCompletion? = nil) {
+  public func rotate(direction: AnimationType.RotationDirection, repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "transform.rotation")
       animation.fromValue = direction == .cw ? 0 : CGFloat.pi * 2
       animation.toValue = direction == .cw  ? CGFloat.pi * 2 : 0
-      animation.duration = configuration.duration
+      animation.duration = CFTimeInterval(self.duration)
       animation.repeatCount = Float(repeatCount)
       animation.autoreverses = false
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "rotate")
       }, completion: completion)
 
   }
 
-  func moveTo(x: Double, y: Double, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  // swiftlint:disable variable_name_min_length
+  public func moveTo(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
     }
@@ -201,83 +174,71 @@ fileprivate extension Animatable where Self: UIView {
     } else {
       yOffsetToMove = CGFloat(y) - absolutePosition.y
     }
-    animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
+    animateBy(x: xOffsetToMove, y: yOffsetToMove, completion: completion)
   }
+  // swiftlint:enable variable_name_min_length
 
-  func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
-                 configuration: AnimationConfiguration,
-                 completion: AnimatableCompletion? = nil) {
-    let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
+  public func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+    let values = computeValues(way: way, direction: direction, shouldScale: false)
     switch way {
     case .in:
       alpha = 0
-      animateIn(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
+      animateIn(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, completion: completion)
     case .out:
-      animateOut(animationValues: values, alpha: 0, configuration: configuration, completion: completion)
+      animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 0, completion: completion)
     }
   }
 
-  func fade(_ way: AnimationType.FadeWay, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func fade(_ way: AnimationType.FadeWay, completion: AnimatableCompletion? = nil) {
     switch way {
     case .outIn:
-      fadeOutIn(configuration: configuration, completion: completion)
+      fadeOutIn(completion: completion)
     case .inOut:
-      fadeInOut(configuration: configuration, completion: completion)
+      fadeInOut(completion: completion)
     case .in:
       alpha = 0
-      animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: 1, scaleY: 1), alpha: 1, configuration: configuration, completion: completion)
+      animateIn(x: 0, y: 0, scaleX: 1, scaleY: 1, alpha: 1, completion: completion)
     case .out:
       alpha = 1
-      animateOut(animationValues: AnimationValues(x: 0, y: 0, scaleX: 1, scaleY: 1), alpha: 0, configuration: configuration, completion: completion)
+      animateOut(x: 0, y: 0, scaleX: 1, scaleY: 1, alpha: 0, completion: completion)
     }
   }
 
-    func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
-                     configuration: AnimationConfiguration,
-                     completion: AnimatableCompletion? = nil) {
-    let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: true)
+  public func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+    let values = computeValues(way: way, direction: direction, shouldScale: true)
     switch way {
     case .in:
       alpha = 0
-      animateIn(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
+      animateIn(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, completion: completion)
     case .out:
-      animateOut(animationValues: values, alpha: 0, configuration: configuration, completion: completion)
+      animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 0, completion: completion)
     }
   }
 
-  func zoom(_ way: AnimationType.Way, invert: Bool = false, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func zoom(_ way: AnimationType.Way, invert: Bool = false, completion: AnimatableCompletion? = nil) {
     let toAlpha: CGFloat
 
     switch way {
     case .in where invert:
-      let scale = configuration.force
+      let scale = force
       alpha = 0
       toAlpha = 1
       transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-      animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale / 2, scaleY: scale / 2),
-                alpha: toAlpha,
-                configuration: configuration,
-                completion: completion)
+      animateIn(x: 0, y: 0, scaleX: scale / 2, scaleY: scale / 2, alpha: toAlpha, completion: completion)
     case .in:
-      let scale = 2 * configuration.force
+      let scale = 2 * force
       alpha = 0
       toAlpha = 1
-      animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale, scaleY: scale),
-                alpha: toAlpha,
-                configuration: configuration,
-                completion: completion)
+      animateIn(x: 0, y: 0, scaleX: scale, scaleY: scale, alpha: toAlpha, completion: completion)
     case .out:
-      let scale = (invert ? 0.1 :  2) * configuration.force
+      let scale = (invert ? 0.1 :  2) * force
       alpha = 1
       toAlpha = 0
-      animateOut(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale, scaleY: scale),
-                 alpha: toAlpha,
-                 configuration: configuration,
-                 completion: completion)
+      animateOut(x: 0, y: 0, scaleX: scale, scaleY: scale, alpha: toAlpha, completion: completion)
     }
   }
 
-  func flip(axis: AnimationType.Axis, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
     let scaleX: CGFloat
     let scaleY: CGFloat
     switch axis {
@@ -288,44 +249,41 @@ fileprivate extension Animatable where Self: UIView {
       scaleX = -1
       scaleY = 1
     }
-    animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scaleX, scaleY: scaleY),
-              alpha: 1,
-              configuration: configuration,
-              completion: completion)
+    animateIn(x: 0, y: 0, scaleX: scaleX, scaleY: scaleY, alpha: 1, completion: completion)
   }
 
-  func shake(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func shake(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "position.x")
-      animation.values = [0, 30 * configuration.force, -30 * configuration.force, 30 * configuration.force, 0]
+      animation.values = [0, 30 * self.force, -30 * self.force, 30 * self.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      animation.duration = configuration.duration
+      animation.duration = CFTimeInterval(self.duration)
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "shake")
     }, completion: completion)
   }
 
-  func pop(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func pop(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "transform.scale")
-      animation.values = [0, 0.2 * configuration.force, -0.2 * configuration.force, 0.2 * configuration.force, 0]
+      animation.values = [0, 0.2 * self.force, -0.2 * self.force, 0.2 * self.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      animation.duration = configuration.duration
+      animation.duration = CFTimeInterval(self.duration)
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "pop")
     }, completion: completion)
   }
 
-  func squash(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func squash(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let squashX = CAKeyframeAnimation(keyPath: "transform.scale.x")
-      squashX.values = [1, 1.5 * configuration.force, 0.5, 1.5 * configuration.force, 1]
+      squashX.values = [1, 1.5 * self.force, 0.5, 1.5 * self.force, 1]
       squashX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squashX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 
@@ -336,38 +294,38 @@ fileprivate extension Animatable where Self: UIView {
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [squashX, squashY]
-      animationGroup.duration = configuration.duration
+      animationGroup.duration = CFTimeInterval(self.duration)
       animationGroup.repeatCount = Float(repeatCount)
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animationGroup, forKey: "squash")
     }, completion: completion)
   }
 
-  func morph(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func morph(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
-      morphX.values = [1, 1.3 * configuration.force, 0.7, 1.3 * configuration.force, 1]
+      morphX.values = [1, 1.3 * self.force, 0.7, 1.3 * self.force, 1]
       morphX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       morphX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 
       let morphY = CAKeyframeAnimation(keyPath: "transform.scale.y")
-      morphY.values = [1, 0.7, 1.3 * configuration.force, 0.7, 1]
+      morphY.values = [1, 0.7, 1.3 * self.force, 0.7, 1]
       morphY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       morphY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [morphX, morphY]
-      animationGroup.duration = configuration.duration
+      animationGroup.duration = CFTimeInterval(self.duration)
       animationGroup.repeatCount = Float(repeatCount)
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animationGroup, forKey: "morph")
     }, completion: completion)
   }
 
-  func squeeze(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func squeeze(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let squeezeX = CAKeyframeAnimation(keyPath: "transform.scale.x")
-      squeezeX.values = [1, 1.5 * configuration.force, 0.5, 1.5 * configuration.force, 1]
+      squeezeX.values = [1, 1.5 * self.force, 0.5, 1.5 * self.force, 1]
       squeezeX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squeezeX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 
@@ -378,132 +336,131 @@ fileprivate extension Animatable where Self: UIView {
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [squeezeX, squeezeY]
-      animationGroup.duration = configuration.duration
+      animationGroup.duration = CFTimeInterval(self.duration)
       animationGroup.repeatCount = Float(repeatCount)
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animationGroup, forKey: "squeeze")
     }, completion: completion)
   }
 
-  func flash(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func flash(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
       animation.toValue = 0
-      animation.duration = configuration.duration
+      animation.duration = CFTimeInterval(self.duration)
       animation.repeatCount = Float(repeatCount) * 2.0
       animation.autoreverses = true
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "flash")
     }, completion: completion)
   }
 
-  func wobble(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func wobble(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
-      rotation.values = [0, 0.3 * configuration.force, -0.3 * configuration.force, 0.3 * configuration.force, 0]
+      rotation.values = [0, 0.3 * self.force, -0.3 * self.force, 0.3 * self.force, 0]
       rotation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       rotation.isAdditive = true
 
       let positionX = CAKeyframeAnimation(keyPath: "position.x")
-      positionX.values = [0, 30 * configuration.force, -30 * configuration.force, 30 * configuration.force, 0]
+      positionX.values = [0, 30 * self.force, -30 * self.force, 30 * self.force, 0]
       positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
       positionX.isAdditive = true
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [rotation, positionX]
-      animationGroup.duration = configuration.duration
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.duration = CFTimeInterval(self.duration)
+      animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       animationGroup.repeatCount = Float(repeatCount)
       self.layer.add(animationGroup, forKey: "wobble")
     }, completion: completion)
   }
 
-  func swing(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func swing(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
-      animation.values = [0, 0.3 * configuration.force, -0.3 * configuration.force, 0.3 * configuration.force, 0]
+      animation.values = [0, 0.3 * self.force, -0.3 * self.force, 0.3 * self.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      animation.duration = configuration.duration
+      animation.duration = CFTimeInterval(self.duration)
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "swing")
     }, completion: completion)
   }
 
   // swiftlint:disable variable_name_min_length
-  func moveBy(x: Double, y: Double, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  public func moveBy(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
     }
 
     let xOffsetToMove = x.isNaN ? 0: CGFloat(x)
     let yOffsetToMove = y.isNaN ? 0: CGFloat(y)
-    animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
+    animateBy(x: xOffsetToMove, y: yOffsetToMove, completion: completion)
   }
-
+}
 // swiftlint:enable variable_name_min_length
-  func computeValues(way: AnimationType.Way, direction: AnimationType.Direction,
-                     configuration: AnimationConfiguration,
-                     shouldScale: Bool) -> AnimationValues {
-    let scale = 3 * configuration.force
+
+private extension Animatable where Self: UIView {
+  func computeValues(way: AnimationType.Way, direction: AnimationType.Direction, shouldScale: Bool) -> AnimationValues {
+    let scale = 3 * force
     var scaleX: CGFloat = 1
     var scaleY: CGFloat = 1
 
-    var frame: CGRect
-    if let window = window {
-      frame = window.convert(self.frame, to: window)
-    } else {
-      frame = self.frame
-    }
-
     var x: CGFloat = 0
     var y: CGFloat = 0
-    switch (way, direction) {
-    case (.in, .left), (.out, .right):
-      x = screenSize.width - frame.minX
-    case (.in, .right), (.out, .left):
-      x = -frame.maxX
-    case (.in, .up), (.out, .down):
-      y = screenSize.height - frame.minY
-    case (.in, .down), (.out, .up):
-      y = -frame.maxY
+    switch direction {
+    case .left:
+      x = -(screenSize.width - frame.maxX + frame.width)
+    case .right:
+      x = frame.maxX
+    case .down:
+      y = -(screenSize.height - frame.maxY + frame.height)
+    case .up:
+      y = frame.maxY
     }
 
-    x *= configuration.force
-    y *= configuration.force
+    x *= force
+    y *= force
     if shouldScale && direction.isVertical() {
       scaleY = scale
     } else if shouldScale {
       scaleX = scale
     }
-
-    return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
+    switch way {
+    case .in:
+      return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
+    case .out where direction.isVertical():
+      return (x: x, y: -y, scaleX: scaleX, scaleY: scaleY)
+    case .out:
+      return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
+    }
   }
 
-  func fadeOutIn(configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  func fadeOutIn(completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
       animation.toValue = 0
       animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      animation.duration = configuration.duration
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.duration = CFTimeInterval(self.duration)
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       animation.autoreverses = true
       self.layer.add(animation, forKey: "fade")
       }, completion: completion)
   }
 
-  func fadeInOut(configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  func fadeInOut(completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 0
       animation.toValue = 1
       animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      animation.duration = configuration.duration
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.duration = CFTimeInterval(self.duration)
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       animation.autoreverses = true
       animation.isRemovedOnCompletion = false
       self.layer.add(animation, forKey: "fade")
@@ -516,13 +473,9 @@ fileprivate extension Animatable where Self: UIView {
   }
 
   // swiftlint:disable variable_name_min_length
-  func animateBy(x: CGFloat, y: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  func animateBy(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
-    UIView.animate(withDuration: configuration.duration,
-                   delay: configuration.delay,
-                   usingSpringWithDamping: configuration.damping,
-                   initialSpringVelocity: configuration.velocity,
-                   options: [],
+    UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
       animations: {
         self.transform = translate
       },
@@ -534,17 +487,13 @@ fileprivate extension Animatable where Self: UIView {
     )
   }
 
-  func animateIn(animationValues: AnimationValues, alpha: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
-    let translate = CGAffineTransform(translationX: animationValues.x, y: animationValues.y)
-    let scale = CGAffineTransform(scaleX: animationValues.scaleX, y: animationValues.scaleY)
+  func animateIn(x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat, alpha: CGFloat, completion: AnimatableCompletion? = nil) {
+    let translate = CGAffineTransform(translationX: x, y: y)
+    let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
     let translateAndScale = translate.concatenating(scale)
     transform = translateAndScale
 
-    UIView.animate(withDuration: configuration.duration,
-                   delay: configuration.delay,
-                   usingSpringWithDamping: configuration.damping,
-                   initialSpringVelocity: configuration.velocity,
-                   options: [],
+    UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
       animations: {
         self.transform = CGAffineTransform.identity
         self.alpha = alpha
@@ -556,16 +505,12 @@ fileprivate extension Animatable where Self: UIView {
     })
   }
 
-  func animateOut(animationValues: AnimationValues, alpha: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
-    let translate = CGAffineTransform(translationX: animationValues.x, y: animationValues.y)
-    let scale = CGAffineTransform(scaleX: animationValues.scaleX, y: animationValues.scaleY)
+  func animateOut(x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat, alpha: CGFloat, completion: AnimatableCompletion? = nil) {
+    let translate = CGAffineTransform(translationX: x, y: y)
+    let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
     let translateAndScale = translate.concatenating(scale)
 
-    UIView.animate(withDuration: configuration.duration,
-                   delay: configuration.delay,
-                   usingSpringWithDamping: configuration.damping,
-                   initialSpringVelocity: configuration.velocity,
-                   options: [],
+    UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
       animations: {
         self.transform = translateAndScale
         self.alpha = alpha
@@ -579,7 +524,7 @@ fileprivate extension Animatable where Self: UIView {
   }
 
   var screenSize: CGSize {
-    return window?.screen.bounds.size ?? .zero
+    return self.window?.screen.bounds.size ?? CGSize.zero
   }
 }
 // swiftlint:enable variable_name_min_length

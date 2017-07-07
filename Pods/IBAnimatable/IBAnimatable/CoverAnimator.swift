@@ -13,9 +13,9 @@ public class CoverAnimator: NSObject, AnimatedPresenting {
   // MARK: - private
   fileprivate var direction: TransitionAnimationType.Direction
 
-  public init(from direction: TransitionAnimationType.Direction, duration: Duration) {
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
     self.direction = direction
-    self.transitionDuration = duration
+    self.transitionDuration = transitionDuration
     super.init()
   }
 }
@@ -72,7 +72,7 @@ private extension CoverAnimator {
     case .bottom:
       initialFrame.origin.y = 0 - initialFrame.size.height
     default:
-      fatalError("Invalid cover direction")
+      fatalError()
     }
     return initialFrame
   }

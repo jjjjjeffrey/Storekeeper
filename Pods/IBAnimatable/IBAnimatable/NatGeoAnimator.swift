@@ -19,11 +19,18 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
 
   // MARK: - Life cycle
 
-  public init(from direction: TransitionAnimationType.Direction, duration: Duration) {
-    transitionDuration = duration
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+    self.transitionDuration = transitionDuration
     fromDirection = direction
-    transitionAnimationType = .natGeo(to: direction)
-    reverseAnimationType = .natGeo(to: direction.opposite)
+
+    switch fromDirection {
+    case .right:
+      self.transitionAnimationType = .natGeo(to: .right)
+      self.reverseAnimationType = .natGeo(to: .left)
+    default:
+      self.transitionAnimationType = .natGeo(to: .left)
+      self.reverseAnimationType = .natGeo(to: .right)
+    }
 
     super.init()
   }
@@ -63,10 +70,7 @@ extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension NatGeoAnimator {
 
-  func executeLeftAnimation(context transitionContext: UIViewControllerContextTransitioning,
-                            containerView: UIView,
-                            fromView: UIView,
-                            toView: UIView) {
+  func executeLeftAnimation(context transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     fromView.isUserInteractionEnabled = false
     var fromLayer = fromView.layer
     var toLayer = toView.layer
@@ -101,10 +105,7 @@ private extension NatGeoAnimator {
 
 private extension NatGeoAnimator {
 
-  func executeRightAnimations(context transitionContext: UIViewControllerContextTransitioning,
-                              containerView: UIView,
-                              fromView: UIView,
-                              toView: UIView) {
+  func executeRightAnimations(context transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
 
     toView.isUserInteractionEnabled = true
     var fromLayer = toView.layer
