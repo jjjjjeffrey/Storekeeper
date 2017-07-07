@@ -6,9 +6,7 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable, FillDesignable, BorderDesignable,
-                                                               ShadowDesignable, TableViewCellDesignable, GradientDesignable,
-                                                               BackgroundImageDesignable, Animatable {
+open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, TableViewCellDesignable, GradientDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
@@ -17,7 +15,7 @@ open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable,
     }
   }
 
-  open var cornerSides: CornerSides  = .allSides {
+  open var cornerSides: CornerSides  = .AllSides {
     didSet {
       configureCornerRadius()
     }
@@ -130,13 +128,6 @@ open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable,
   @IBInspectable var _startPoint: String? {
     didSet {
       startPoint = GradientStartPoint(string: _startPoint, default: .top)
-    }
-  }
-
-  // MARK: - BackgroundImageDesignable
-  @IBInspectable open var backgroundImage: UIImage? {
-    didSet {
-      configureBackgroundImage()
     }
   }
 

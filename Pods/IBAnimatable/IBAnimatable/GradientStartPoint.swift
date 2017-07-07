@@ -3,6 +3,7 @@
 //  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 public enum GradientStartPoint: IBEnum {

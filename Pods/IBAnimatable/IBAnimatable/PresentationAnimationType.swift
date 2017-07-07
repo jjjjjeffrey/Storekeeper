@@ -33,7 +33,9 @@ public enum PresentationAnimationType: IBEnum {
       return nil
     }
 
-    let (name, params) = MaskType.extractNameAndParams(from: string)
+    let nameAndParames = MaskType.extractNameAndParams(from: string)
+    let name = nameAndParames.name
+    let params = nameAndParames.params
     switch name {
     case "crossdissolve":
       self = .crossDissolve

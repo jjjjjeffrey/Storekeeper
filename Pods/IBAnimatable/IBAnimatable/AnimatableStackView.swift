@@ -8,9 +8,7 @@ import UIKit
 // FIXME: almost same as `AnimatableView`, Need to refactor to encasuplate.
 @available(iOS 9, *)
 @IBDesignable
-open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable,
-                                             RotationDesignable, ShadowDesignable, TintDesignable, GradientDesignable,
-                                             MaskDesignable, Animatable {
+open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
@@ -19,7 +17,7 @@ open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, B
     }
   }
 
-  open var cornerSides: CornerSides  = .allSides {
+  open var cornerSides: CornerSides  = .AllSides {
     didSet {
       configureCornerRadius()
     }
@@ -148,7 +146,7 @@ open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, B
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
     didSet {
-      configureMask(previousMaskType: oldValue)
+      configureMask()
       configureBorder()
     }
   }
@@ -198,7 +196,7 @@ open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, B
   }
 
   fileprivate func configureAfterLayoutSubviews() {
-    configureMask(previousMaskType: maskType)
+    configureMask()
     configureCornerRadius()
     configureBorder()
     configureGradient()

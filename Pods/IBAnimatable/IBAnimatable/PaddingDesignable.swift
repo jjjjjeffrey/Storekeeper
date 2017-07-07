@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol PaddingDesignable: class {
+public protocol PaddingDesignable {
   /**
     `padding-left`
   */

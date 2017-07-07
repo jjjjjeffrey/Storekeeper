@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol CornerDesignable: class {
+public protocol CornerDesignable {
   /**
    `border-radius`
    */
@@ -27,7 +27,7 @@ public extension CornerDesignable where Self: UICollectionViewCell {
       }
       layer.cornerRadius = 0.0
 
-      if cornerSides == .allSides {
+      if cornerSides == .AllSides {
         contentView.layer.cornerRadius = cornerRadius
       } else {
         contentView.layer.cornerRadius = 0.0
@@ -48,7 +48,7 @@ public extension CornerDesignable where Self: UICollectionViewCell {
 public extension CornerDesignable where Self: UIView {
   public func configureCornerRadius() {
     if !cornerRadius.isNaN && cornerRadius > 0 {
-      if cornerSides == .allSides {
+      if cornerSides == .AllSides {
         layer.cornerRadius = cornerRadius
       } else {
         layer.cornerRadius = 0.0

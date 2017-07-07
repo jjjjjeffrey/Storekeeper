@@ -6,9 +6,7 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, BorderDesignable,
-                                             RotationDesignable, ShadowDesignable, BlurDesignable,
-                                             TintDesignable, GradientDesignable, MaskDesignable, Animatable {
+open class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
@@ -17,7 +15,7 @@ open class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, B
     }
   }
 
-  open var cornerSides: CornerSides  = .allSides {
+  open var cornerSides: CornerSides  = .AllSides {
     didSet {
       configureCornerRadius()
     }
@@ -174,7 +172,7 @@ open class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, B
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
     didSet {
-      configureMask(previousMaskType: oldValue)
+      configureMask()
       configureBorder()
       configureMaskShadow()
     }
@@ -225,7 +223,7 @@ open class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, B
   }
 
   fileprivate func configureAfterLayoutSubviews() {
-    configureMask(previousMaskType: maskType)
+    configureMask()
     configureCornerRadius()
     configureBorder()
     configureMaskShadow()

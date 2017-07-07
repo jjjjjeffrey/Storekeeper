@@ -6,7 +6,7 @@
 import UIKit
 
 /// A protocol provides mask designable feature.
-public protocol MaskDesignable: class {
+public protocol MaskDesignable {
   /**
    The type of the mask used for masking an IBAnimatable UI element.
 
@@ -35,29 +35,22 @@ public protocol MaskDesignable: class {
 
 public extension MaskDesignable where Self: UIView {
   /// Mask the IBAnimatable UI element with provided `maskType`
-  public func configureMask(previousMaskType: MaskType) {
+  public func configureMask() {
     switch maskType {
     case .circle:
       maskCircle()
-    case let .parallelogram(angle):
+    case .parallelogram(let angle):
       maskParallelogram(with: angle)
-    case let .polygon(sides):
+    case .polygon(let sides):
       maskPolygon(with: sides)
-    case let .star(points):
+    case .star(let points):
       maskStar(with: points )
-    case let .wave(direction, width, offset):
+    case .wave(let direction, let width, let offset):
       maskWave(with: direction, width: width, offset: offset)
     case .triangle:
       maskTriangle()
-    case let .custom(pathProvider):
-      maskCustom(with: pathProvider)
     case .none:
-      // If `previousMaskType` is `.none`, then we will **not** remove `layer.mask` before re-adding it. This allows for custom masks to be preserved.
-      if case .none = previousMaskType {
-        return
-      } else {
-          layer.mask?.removeFromSuperlayer()
-      }
+      layer.mask?.removeFromSuperlayer()
     }
   }
 }
@@ -275,10 +268,6 @@ private extension MaskDesignable where Self: UIView {
 
     path.addLine(to: CGPoint(x: path.currentPoint.x, y: originY))
     return path
-  }
-
-  func maskCustom(with provider: CustomMaskProvider) {
-    draw(provider(bounds.size))
   }
 }
 

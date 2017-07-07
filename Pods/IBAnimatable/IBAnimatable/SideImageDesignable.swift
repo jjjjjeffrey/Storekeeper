@@ -6,7 +6,7 @@
 import UIKit
 
 /// Protocol for designing side image
-public protocol SideImageDesignable: class {
+public protocol SideImageDesignable {
   /**
    * The left image
    */
@@ -61,10 +61,7 @@ fileprivate extension SideImageDesignable where Self: UITextField {
       return
     }
 
-    let sideView = makeSideView(with: leftImage,
-                                leftPadding: leftImageLeftPadding,
-                                rightPadding: leftImageRightPadding,
-                                topPadding: leftImageTopPadding)
+    let sideView = makeSideView(with: leftImage, leftPadding: leftImageLeftPadding, rightPadding: leftImageRightPadding, topPadding: leftImageTopPadding)
     leftViewMode = .always
     leftView = sideView
   }
@@ -74,10 +71,7 @@ fileprivate extension SideImageDesignable where Self: UITextField {
       return
     }
 
-    let sideView = makeSideView(with: rightImage,
-                                leftPadding: rightImageLeftPadding,
-                                rightPadding: rightImageRightPadding,
-                                topPadding: rightImageTopPadding)
+    let sideView = makeSideView(with: rightImage, leftPadding: rightImageLeftPadding, rightPadding: rightImageRightPadding, topPadding: rightImageTopPadding)
     rightViewMode = .always
     rightView = sideView
   }

@@ -16,6 +16,7 @@ public class ActivityIndicatorAnimationBallRotate: ActivityIndicatorAnimating {
 
   public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let circleSize: CGFloat = size.width / 5
+    let animation = self.animation
 
     // Draw circles
     let leftCircle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
@@ -29,10 +30,7 @@ public class ActivityIndicatorAnimationBallRotate: ActivityIndicatorAnimating {
     centerCircle.frame = CGRect(x: (size.width - circleSize) / 2, y: (size.height - circleSize) / 2, width: circleSize, height: circleSize)
 
     let circle = CALayer()
-    let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
-                       y: (layer.bounds.size.height - size.height) / 2,
-                       width: size.width,
-                       height: size.height)
+    let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2, y: (layer.bounds.size.height - size.height) / 2, width: size.width, height: size.height)
 
     circle.frame = frame
     circle.addSublayer(leftCircle)

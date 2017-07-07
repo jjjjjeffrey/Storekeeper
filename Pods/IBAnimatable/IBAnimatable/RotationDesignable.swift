@@ -9,14 +9,14 @@ import Darwin
 /**
   It is not able to preview the rotation in IB.
 */
-public protocol RotationDesignable: class {
+public protocol RotationDesignable {
   var rotate: CGFloat { get set }
 }
 
 public extension RotationDesignable where Self: UIView {
   public func configureRotate() {
     if !rotate.isNaN && rotate > -360 && rotate < 360 {
-      transform = CGAffineTransform(rotationAngle: .pi * rotate / 180)
+      self.transform = CGAffineTransform(rotationAngle: .pi * rotate / 180)
     }
   }
 }

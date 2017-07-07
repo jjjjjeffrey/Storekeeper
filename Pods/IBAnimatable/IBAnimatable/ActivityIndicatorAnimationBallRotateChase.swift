@@ -18,11 +18,7 @@ public class ActivityIndicatorAnimationBallRotateChase: ActivityIndicatorAnimati
     for i in 0 ..< 5 {
       let factor = Float(i) * 1.0 / 5
       let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
-      let animation = rotateAnimation(rate: factor,
-                                      x: layer.bounds.size.width / 2,
-                                      y: layer.bounds.size.height / 2,
-                                      size: CGSize(width: size.width - circleSize,
-                                                   height: size.height - circleSize))
+      let animation = rotateAnimation(rate: factor, x: layer.bounds.size.width / 2, y: layer.bounds.size.height / 2, size: CGSize(width: size.width - circleSize, height: size.height - circleSize))
 
       circle.frame = CGRect(x: 0, y: 0, width: circleSize, height: circleSize)
       circle.add(animation, forKey: "animation")
@@ -48,11 +44,7 @@ private extension ActivityIndicatorAnimationBallRotateChase {
     let positionAnimation = CAKeyframeAnimation(keyPath: "position")
     positionAnimation.duration = duration
     positionAnimation.repeatCount = .infinity
-    positionAnimation.path = UIBezierPath(arcCenter: CGPoint(x: x, y: y),
-                                          radius: size.width / 2,
-                                          startAngle: 3 * CGFloat.pi / 2,
-                                          endAngle: 3 * CGFloat.pi / 2 + 2 * CGFloat.pi,
-                                          clockwise: true).cgPath
+    positionAnimation.path = UIBezierPath(arcCenter: CGPoint(x: x, y: y), radius: size.width / 2, startAngle: 3 * CGFloat.pi / 2, endAngle: 3 * CGFloat.pi / 2 + 2 * CGFloat.pi, clockwise: true).cgPath
 
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, positionAnimation]

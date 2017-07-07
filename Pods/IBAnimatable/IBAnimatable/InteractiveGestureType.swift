@@ -47,7 +47,9 @@ extension InteractiveGestureType: IBEnum {
       return
     }
 
-    let (name, params) = InteractiveGestureType.extractNameAndParams(from: string)
+    let nameAndParams = InteractiveGestureType.extractNameAndParams(from: string)
+    let name = nameAndParams.name
+    let params = nameAndParams.params
 
     switch name {
     case "default":
