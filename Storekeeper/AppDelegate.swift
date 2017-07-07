@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.tintColor = UIColor(hex: 0xFF2D55)
         
-        
         return true
     }
 
