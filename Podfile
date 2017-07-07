@@ -17,4 +17,5 @@ target 'Storekeeper' do
   pod 'HandyJSON', '~> 1.0'
   pod 'FileKit', '~> 4.0'
   pod 'SwifterSwift', '~> 1.0'
+  pod 'SwiftQRCode', '~> 3.0'
 end

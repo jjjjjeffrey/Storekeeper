@@ -15,6 +15,7 @@ PODS:
   - PKHUD (4.2.3)
   - SnapKit (3.2.0)
   - SwifterSwift (1.6.4)
+  - SwiftQRCode (3.0.2)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - PKHUD (~> 4.0)
   - SnapKit (~> 3.0)
   - SwifterSwift (~> 1.0)
+  - SwiftQRCode (~> 3.0)
   - SwiftyJSON (~> 3.0)
 
 SPEC CHECKSUMS:
@@ -41,8 +43,9 @@ SPEC CHECKSUMS:
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
+  SwiftQRCode: 280589699d84195c2c573011aa52f2c015c31c34
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 1cb550de5771610b3cbf21b941574ec27f90dc5f
+PODFILE CHECKSUM: 72e6f1abb0a388cbd96b08a4210971fb891b8541
 
 COCOAPODS: 1.2.1
