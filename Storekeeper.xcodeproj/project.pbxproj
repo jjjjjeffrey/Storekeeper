@@ -21,7 +21,9 @@
 		7BA42ED81F15C22C00F9344B /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA42ED71F15C22C00F9344B /* Mine.storyboard */; };
 		7BA5A83A1F15CB930037179C /* Member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA5A8391F15CB930037179C /* Member.storyboard */; };
 		7BA612E51F0E74BE0066017F /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA612E41F0E74BE0066017F /* SaleViewController.swift */; };
+		7BACDFF41F1626C5000306A7 /* PutInStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */; };
 		7BFF2B411F15D0BD0062FCC7 /* SelectMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF2B401F15D0BD0062FCC7 /* SelectMemberViewController.swift */; };
+		7BFF2B431F15EA460062FCC7 /* Goods.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BFF2B421F15EA460062FCC7 /* Goods.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +44,9 @@
 		7BA42ED71F15C22C00F9344B /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
 		7BA5A8391F15CB930037179C /* Member.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Member.storyboard; sourceTree = "<group>"; };
 		7BA612E41F0E74BE0066017F /* SaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
+		7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutInStorageViewController.swift; sourceTree = "<group>"; };
 		7BFF2B401F15D0BD0062FCC7 /* SelectMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMemberViewController.swift; sourceTree = "<group>"; };
+		7BFF2B421F15EA460062FCC7 /* Goods.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Goods.storyboard; sourceTree = "<group>"; };
 		8862E79E04394961A044D267 /* Pods-Storekeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storekeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Storekeeper/Pods-Storekeeper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +99,8 @@
 				7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */,
 				7BFF2B401F15D0BD0062FCC7 /* SelectMemberViewController.swift */,
 				7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */,
+				7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */,
+				7BFF2B421F15EA460062FCC7 /* Goods.storyboard */,
 				7BA5A8391F15CB930037179C /* Member.storyboard */,
 				7B2BFE611F0E1C5900F0FDB4 /* Home.storyboard */,
 				7BA42ED71F15C22C00F9344B /* Mine.storyboard */,
@@ -185,6 +191,7 @@
 				7BA42ED81F15C22C00F9344B /* Mine.storyboard in Resources */,
 				7B36179C1F0E12B4004E7850 /* Main.storyboard in Resources */,
 				7B2BFE621F0E1C5900F0FDB4 /* Home.storyboard in Resources */,
+				7BFF2B431F15EA460062FCC7 /* Goods.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B2BFE841F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift in Sources */,
+				7BACDFF41F1626C5000306A7 /* PutInStorageViewController.swift in Sources */,
 				7B2BFE641F0E240300F0FDB4 /* BarcodeSaleViewController.swift in Sources */,
 				7B3617991F0E12B4004E7850 /* ViewController.swift in Sources */,
 				7B3617971F0E12B4004E7850 /* AppDelegate.swift in Sources */,
