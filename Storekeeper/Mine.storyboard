@@ -138,11 +138,11 @@
             </objects>
             <point key="canvasLocation" x="1248.8" y="-282.00899550224892"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--我的-->
         <scene sceneID="DLA-1d-j73">
             <objects>
                 <navigationController id="oeJ-qL-bCD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="Pow-qy-LXv"/>
+                    <tabBarItem key="tabBarItem" title="我的" id="Pow-qy-LXv"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dl4-8g-ZhY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

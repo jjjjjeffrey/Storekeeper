@@ -19,7 +19,9 @@
 		7BA42ED31F15B2DD00F9344B /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */; };
 		7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */; };
 		7BA42ED81F15C22C00F9344B /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA42ED71F15C22C00F9344B /* Mine.storyboard */; };
+		7BA5A83A1F15CB930037179C /* Member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA5A8391F15CB930037179C /* Member.storyboard */; };
 		7BA612E51F0E74BE0066017F /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA612E41F0E74BE0066017F /* SaleViewController.swift */; };
+		7BFF2B411F15D0BD0062FCC7 /* SelectMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF2B401F15D0BD0062FCC7 /* SelectMemberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +40,9 @@
 		7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewController.swift; sourceTree = "<group>"; };
 		7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7BA42ED71F15C22C00F9344B /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
+		7BA5A8391F15CB930037179C /* Member.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Member.storyboard; sourceTree = "<group>"; };
 		7BA612E41F0E74BE0066017F /* SaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
+		7BFF2B401F15D0BD0062FCC7 /* SelectMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMemberViewController.swift; sourceTree = "<group>"; };
 		8862E79E04394961A044D267 /* Pods-Storekeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storekeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Storekeeper/Pods-Storekeeper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +93,9 @@
 				7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */,
 				7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */,
 				7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */,
+				7BFF2B401F15D0BD0062FCC7 /* SelectMemberViewController.swift */,
 				7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */,
+				7BA5A8391F15CB930037179C /* Member.storyboard */,
 				7B2BFE611F0E1C5900F0FDB4 /* Home.storyboard */,
 				7BA42ED71F15C22C00F9344B /* Mine.storyboard */,
 				7B36179A1F0E12B4004E7850 /* Main.storyboard */,
@@ -175,6 +181,7 @@
 			files = (
 				7B3617A11F0E12B4004E7850 /* LaunchScreen.storyboard in Resources */,
 				7B36179E1F0E12B4004E7850 /* Assets.xcassets in Resources */,
+				7BA5A83A1F15CB930037179C /* Member.storyboard in Resources */,
 				7BA42ED81F15C22C00F9344B /* Mine.storyboard in Resources */,
 				7B36179C1F0E12B4004E7850 /* Main.storyboard in Resources */,
 				7B2BFE621F0E1C5900F0FDB4 /* Home.storyboard in Resources */,
@@ -253,6 +260,7 @@
 				7B2BFE641F0E240300F0FDB4 /* BarcodeSaleViewController.swift in Sources */,
 				7B3617991F0E12B4004E7850 /* ViewController.swift in Sources */,
 				7B3617971F0E12B4004E7850 /* AppDelegate.swift in Sources */,
+				7BFF2B411F15D0BD0062FCC7 /* SelectMemberViewController.swift in Sources */,
 				7BA42ED31F15B2DD00F9344B /* MembersTableViewController.swift in Sources */,
 				7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */,
 				7BA612E51F0E74BE0066017F /* SaleViewController.swift in Sources */,

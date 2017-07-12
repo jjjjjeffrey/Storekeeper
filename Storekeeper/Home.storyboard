@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--首页-->
         <scene sceneID="CBH-pc-1mZ">
             <objects>
                 <navigationController id="QVB-LZ-8eb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="FIi-Sl-1NX"/>
+                    <tabBarItem key="tabBarItem" title="首页" id="FIi-Sl-1NX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c8f-50-8Cl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -319,7 +319,7 @@
         <!--选择会员-->
         <scene sceneID="Ifs-94-uqv">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="AgE-Bb-lxR" customClass="MembersTableViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="AgE-Bb-lxR" customClass="SelectMemberViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="km5-ta-ZmG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
