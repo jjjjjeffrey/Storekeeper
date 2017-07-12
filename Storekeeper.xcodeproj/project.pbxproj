@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		067502D4EAFB9B8A606BA02D /* Pods_Storekeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FE374A72EC55F6C95DDCA2 /* Pods_Storekeeper.framework */; };
-		7B2BFE621F0E1C5900F0FDB4 /* Sale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2BFE611F0E1C5900F0FDB4 /* Sale.storyboard */; };
+		7B2BFE621F0E1C5900F0FDB4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2BFE611F0E1C5900F0FDB4 /* Home.storyboard */; };
 		7B2BFE641F0E240300F0FDB4 /* BarcodeSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */; };
 		7B2BFE841F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */; };
 		7B3617971F0E12B4004E7850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3617961F0E12B4004E7850 /* AppDelegate.swift */; };
@@ -18,13 +18,14 @@
 		7B3617A11F0E12B4004E7850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179F1F0E12B4004E7850 /* LaunchScreen.storyboard */; };
 		7BA42ED31F15B2DD00F9344B /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */; };
 		7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */; };
+		7BA42ED81F15C22C00F9344B /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA42ED71F15C22C00F9344B /* Mine.storyboard */; };
 		7BA612E51F0E74BE0066017F /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA612E41F0E74BE0066017F /* SaleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		37BEA18C78F13F33A5C526FC /* Pods-Storekeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storekeeper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Storekeeper/Pods-Storekeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		39FE374A72EC55F6C95DDCA2 /* Pods_Storekeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storekeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B2BFE611F0E1C5900F0FDB4 /* Sale.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sale.storyboard; sourceTree = "<group>"; };
+		7B2BFE611F0E1C5900F0FDB4 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeSaleViewController.swift; sourceTree = "<group>"; };
 		7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCategoryPickerViewController.swift; sourceTree = "<group>"; };
 		7B3617931F0E12B4004E7850 /* Storekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +37,7 @@
 		7B3617A21F0E12B4004E7850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewController.swift; sourceTree = "<group>"; };
 		7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7BA42ED71F15C22C00F9344B /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
 		7BA612E41F0E74BE0066017F /* SaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
 		8862E79E04394961A044D267 /* Pods-Storekeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storekeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Storekeeper/Pods-Storekeeper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,7 +90,8 @@
 				7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */,
 				7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */,
 				7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */,
-				7B2BFE611F0E1C5900F0FDB4 /* Sale.storyboard */,
+				7B2BFE611F0E1C5900F0FDB4 /* Home.storyboard */,
+				7BA42ED71F15C22C00F9344B /* Mine.storyboard */,
 				7B36179A1F0E12B4004E7850 /* Main.storyboard */,
 				7B36179D1F0E12B4004E7850 /* Assets.xcassets */,
 				7B36179F1F0E12B4004E7850 /* LaunchScreen.storyboard */,
@@ -172,8 +175,9 @@
 			files = (
 				7B3617A11F0E12B4004E7850 /* LaunchScreen.storyboard in Resources */,
 				7B36179E1F0E12B4004E7850 /* Assets.xcassets in Resources */,
+				7BA42ED81F15C22C00F9344B /* Mine.storyboard in Resources */,
 				7B36179C1F0E12B4004E7850 /* Main.storyboard in Resources */,
-				7B2BFE621F0E1C5900F0FDB4 /* Sale.storyboard in Resources */,
+				7B2BFE621F0E1C5900F0FDB4 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
