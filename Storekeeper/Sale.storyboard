@@ -6,16 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--销售-->
+        <!--Navigation Controller-->
         <scene sceneID="CBH-pc-1mZ">
             <objects>
                 <navigationController id="QVB-LZ-8eb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="销售" id="FIi-Sl-1NX"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="FIi-Sl-1NX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c8f-50-8Cl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -32,7 +31,7 @@
         <!--首页-->
         <scene sceneID="JB2-8x-8Ej">
             <objects>
-                <viewController id="AMr-TS-RYG" sceneMemberID="viewController">
+                <viewController id="AMr-TS-RYG" customClass="HomeViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pv0-2q-1FL"/>
                         <viewControllerLayoutGuide type="bottom" id="cdx-ZT-Dle"/>
@@ -41,57 +40,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T02-bu-3eC" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="20" y="164" width="335" height="167.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vRh-c6-zmQ">
+                                <rect key="frame" x="15" y="553" width="345" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T02-bu-3eC" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="0.0" width="165" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="销售开单"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="eF1-ne-IoF" kind="show" id="WUm-lg-sfW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-Ch-2PG" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="180" y="0.0" width="165" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="商品入库"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="T02-bu-3eC" secondAttribute="height" multiplier="2:1" id="Tar-l5-rXG"/>
+                                    <constraint firstAttribute="height" constant="50" id="d2K-cv-btN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="销售开单"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="eF1-ne-IoF" kind="show" id="WUm-lg-sfW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-Ch-2PG" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="20" y="351.5" width="335" height="167.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="C8L-Ch-2PG" secondAttribute="height" multiplier="2:1" id="0M9-2Z-BAi"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="商品入库"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1t4-gK-kUs" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="474"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="C8L-Ch-2PG" firstAttribute="leading" secondItem="jtM-2u-z87" secondAttribute="leading" constant="20" id="WGy-vx-YPd"/>
-                            <constraint firstAttribute="trailing" secondItem="T02-bu-3eC" secondAttribute="trailing" constant="20" id="Zpz-SD-Gru"/>
-                            <constraint firstItem="T02-bu-3eC" firstAttribute="top" secondItem="pv0-2q-1FL" secondAttribute="bottom" constant="100" id="fes-Mu-daA"/>
-                            <constraint firstItem="T02-bu-3eC" firstAttribute="leading" secondItem="jtM-2u-z87" secondAttribute="leading" constant="20" id="rRl-CS-mUD"/>
-                            <constraint firstItem="C8L-Ch-2PG" firstAttribute="top" secondItem="T02-bu-3eC" secondAttribute="bottom" constant="20" id="uCD-Wm-qCO"/>
-                            <constraint firstAttribute="trailing" secondItem="C8L-Ch-2PG" secondAttribute="trailing" constant="20" id="vKN-jI-z7Q"/>
+                            <constraint firstAttribute="trailing" secondItem="vRh-c6-zmQ" secondAttribute="trailing" constant="15" id="1DS-9X-dzh"/>
+                            <constraint firstAttribute="trailing" secondItem="1t4-gK-kUs" secondAttribute="trailing" id="3JW-UI-4ev"/>
+                            <constraint firstItem="1t4-gK-kUs" firstAttribute="leading" secondItem="jtM-2u-z87" secondAttribute="leading" id="eKw-Y8-IVQ"/>
+                            <constraint firstItem="cdx-ZT-Dle" firstAttribute="top" secondItem="vRh-c6-zmQ" secondAttribute="bottom" constant="15" id="qkX-el-h8d"/>
+                            <constraint firstItem="vRh-c6-zmQ" firstAttribute="top" secondItem="1t4-gK-kUs" secondAttribute="bottom" constant="15" id="rnx-eb-qba"/>
+                            <constraint firstItem="vRh-c6-zmQ" firstAttribute="leading" secondItem="jtM-2u-z87" secondAttribute="leading" constant="15" id="ugI-zW-qhc"/>
+                            <constraint firstItem="1t4-gK-kUs" firstAttribute="top" secondItem="pv0-2q-1FL" secondAttribute="bottom" id="v0z-Uh-KkK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="4w5-cA-9fZ"/>
+                    <connections>
+                        <outlet property="chartView" destination="1t4-gK-kUs" id="416-Oh-8WZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kB0-mT-NS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="374" y="108"/>
+            <point key="canvasLocation" x="373.60000000000002" y="107.49625187406298"/>
         </scene>
         <!--购物车-->
         <scene sceneID="fSN-8R-LVH">

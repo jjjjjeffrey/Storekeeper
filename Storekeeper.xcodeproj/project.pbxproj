@@ -17,6 +17,7 @@
 		7B36179E1F0E12B4004E7850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179D1F0E12B4004E7850 /* Assets.xcassets */; };
 		7B3617A11F0E12B4004E7850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179F1F0E12B4004E7850 /* LaunchScreen.storyboard */; };
 		7BA42ED31F15B2DD00F9344B /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */; };
+		7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */; };
 		7BA612E51F0E74BE0066017F /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA612E41F0E74BE0066017F /* SaleViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		7B3617A01F0E12B4004E7850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B3617A21F0E12B4004E7850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewController.swift; sourceTree = "<group>"; };
+		7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7BA612E41F0E74BE0066017F /* SaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
 		8862E79E04394961A044D267 /* Pods-Storekeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storekeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Storekeeper/Pods-Storekeeper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */,
 				7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */,
 				7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */,
+				7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */,
 				7B2BFE611F0E1C5900F0FDB4 /* Sale.storyboard */,
 				7B36179A1F0E12B4004E7850 /* Main.storyboard */,
 				7B36179D1F0E12B4004E7850 /* Assets.xcassets */,
@@ -247,6 +250,7 @@
 				7B3617991F0E12B4004E7850 /* ViewController.swift in Sources */,
 				7B3617971F0E12B4004E7850 /* AppDelegate.swift in Sources */,
 				7BA42ED31F15B2DD00F9344B /* MembersTableViewController.swift in Sources */,
+				7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */,
 				7BA612E51F0E74BE0066017F /* SaleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
