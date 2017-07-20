@@ -48,16 +48,98 @@
                             <outlet property="delegate" destination="6AC-Ui-i6f" id="P5B-Uc-0eJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="会员" id="qMH-GL-IJK"/>
+                    <navigationItem key="navigationItem" title="会员" id="qMH-GL-IJK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="epF-lA-V1C">
+                            <connections>
+                                <segue destination="zVS-EZ-riA" kind="show" id="bKX-uE-SnO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBH-w8-RXr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="44" y="265"/>
         </scene>
+        <!--新增会员-->
+        <scene sceneID="Hxu-XO-8bl">
+            <objects>
+                <tableViewController hidesBottomBarWhenPushed="YES" id="zVS-EZ-riA" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="Ia8-Ub-rmZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections>
+                            <tableViewSection id="Phs-ce-MlC">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="heO-Xg-2YQ">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="heO-Xg-2YQ" id="DZh-hz-wFI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入会员姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o6q-4x-EPB">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="59.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="o6q-4x-EPB" secondAttribute="bottom" id="Ws7-r9-HDg"/>
+                                                <constraint firstItem="o6q-4x-EPB" firstAttribute="leading" secondItem="DZh-hz-wFI" secondAttribute="leading" constant="15" id="bGf-jF-nDt"/>
+                                                <constraint firstItem="o6q-4x-EPB" firstAttribute="top" secondItem="DZh-hz-wFI" secondAttribute="top" id="h3R-4s-fsp"/>
+                                                <constraint firstAttribute="trailing" secondItem="o6q-4x-EPB" secondAttribute="trailing" constant="15" id="yn2-XE-Ane"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sie-qa-hKi">
+                                        <rect key="frame" x="0.0" y="95" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sie-qa-hKi" id="kQ1-0W-zRK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入会员手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QbJ-aL-PRj">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="59.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="QbJ-aL-PRj" secondAttribute="trailing" constant="15" id="IVh-gw-i6O"/>
+                                                <constraint firstItem="QbJ-aL-PRj" firstAttribute="top" secondItem="kQ1-0W-zRK" secondAttribute="top" id="PfX-8g-9u0"/>
+                                                <constraint firstAttribute="bottom" secondItem="QbJ-aL-PRj" secondAttribute="bottom" id="STW-Ii-nK4"/>
+                                                <constraint firstItem="QbJ-aL-PRj" firstAttribute="leading" secondItem="kQ1-0W-zRK" secondAttribute="leading" constant="15" id="izt-Hd-sa3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="zVS-EZ-riA" id="KWV-uM-h8u"/>
+                            <outlet property="delegate" destination="zVS-EZ-riA" id="hmQ-bP-DlF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="新增会员" id="y4R-oz-u6N">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="Kvy-NJ-cG0">
+                            <connections>
+                                <segue destination="2J5-FO-XLf" kind="unwind" unwindAction="dismissCurrentViewController:" id="YZu-pQ-nFD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yX4-OH-1nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2J5-FO-XLf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="265"/>
+        </scene>
         <!--会员-->
         <scene sceneID="PsU-Sh-Brc">
             <objects>
-                <navigationController id="xKh-dY-yyr" sceneMemberID="viewController">
+                <navigationController id="xKh-dY-yyr" customClass="SKNavigationViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="会员" id="kBN-i3-qVR"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kqr-hf-Fur">

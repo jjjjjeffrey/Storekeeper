@@ -13,7 +13,7 @@
         <!--首页-->
         <scene sceneID="CBH-pc-1mZ">
             <objects>
-                <navigationController id="QVB-LZ-8eb" sceneMemberID="viewController">
+                <navigationController id="QVB-LZ-8eb" customClass="SKNavigationViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" id="FIi-Sl-1NX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="c8f-50-8Cl">

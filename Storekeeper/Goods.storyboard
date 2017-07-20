@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="JUN-od-hBp">
             <objects>
-                <navigationController id="B1q-Hx-Uqa" sceneMemberID="viewController">
+                <navigationController id="B1q-Hx-Uqa" customClass="SKNavigationViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="30w-1g-GSG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
