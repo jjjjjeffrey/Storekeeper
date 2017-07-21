@@ -8,40 +8,28 @@
 
 import UIKit
 import Charts
+import IBAnimatable
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var chartView: PieChartView! {
-        didSet {
-            chartView.usePercentValuesEnabled = true
-            chartView.drawSlicesUnderHoleEnabled = false
-            chartView.holeRadiusPercent = 0.58
-            chartView.transparentCircleRadiusPercent = 0.61
-            chartView.chartDescription?.enabled = false
-            chartView.setExtraOffsets(left: 5.0, top: 10.0, right: 5.0, bottom: 5.0)
-            chartView.drawCenterTextEnabled = true
-            
-            chartView.centerText = "销售额1680元"
-            chartView.drawHoleEnabled = true
-            chartView.rotationAngle = 0.0
-            chartView.rotationEnabled = true
-            chartView.highlightPerTapEnabled = true
-            
-            let l = chartView.legend
-            l.horizontalAlignment = .right
-            l.verticalAlignment = .top
-            l.orientation = .vertical
-            l.drawInside = false
-            l.xEntrySpace = 7.0
-            l.yEntrySpace = 0.0
-            l.yOffset = 0.0
-        }
-    }
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var placeholder: UIView!
+    @IBOutlet weak var mainStackView: UIStackView!
+    @IBOutlet weak var placeholderImageView: AnimatableImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadData(index: 0)
+        tableView.isHidden = true
+        mainStackView.addArrangedSubview(placeholder)
+        tableView.tableFooterView = UIView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        placeholderImageView.animate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,62 +48,20 @@ class HomeViewController: UIViewController {
     }
     */
     
-    func loadData(index: Int) {
-        var values: [PieChartDataEntry] = []
-        
-        if index == 0 {
-            let entry0 = PieChartDataEntry(value: 10.0, label: "零食")
-            values.append(entry0)
-            let entry1 = PieChartDataEntry(value: 30.0, label: "日用品")
-            values.append(entry1)
-            let entry2 = PieChartDataEntry(value: 40.0, label: "饮料")
-            values.append(entry2)
-            let entry3 = PieChartDataEntry(value: 50.0, label: "水果")
-            values.append(entry3)
-            let entry4 = PieChartDataEntry(value: 15.0, label: "杂货")
-            values.append(entry4)
-        } else {
-            let entry0 = PieChartDataEntry(value: 10.0, label: "必和必拓")
-            values.append(entry0)
-            let entry1 = PieChartDataEntry(value: 30.0, label: "力拓")
-            values.append(entry1)
-            let entry2 = PieChartDataEntry(value: 40.0, label: "淡水河谷")
-            values.append(entry2)
-            let entry3 = PieChartDataEntry(value: 50.0, label: "Halcyon")
-            values.append(entry3)
-        }
-        
-        
-        let dataSet = PieChartDataSet(values: values, label: "")
-        dataSet.sliceSpace = 2.0
-        dataSet.iconsOffset = CGPoint(x: 0, y: 40)
-        
-        var colors: [NSUIColor] = []
-        
-        colors.append(contentsOf: ChartColorTemplates.vordiplom())
-        colors.append(contentsOf: ChartColorTemplates.joyful())
-        colors.append(contentsOf: ChartColorTemplates.colorful())
-        colors.append(contentsOf: ChartColorTemplates.liberty())
-        colors.append(contentsOf: ChartColorTemplates.pastel())
-        colors.append(NSUIColor(colorLiteralRed: 51.0/255.0, green: 181.0/255.0, blue: 229.0/255.0, alpha: 1.0))
-        
-        dataSet.colors = colors
-        
-        let data = PieChartData(dataSet: dataSet)
-        
-        let pFormatter = NumberFormatter()
-        pFormatter.numberStyle = .percent
-        pFormatter.maximumFractionDigits = 1
-        pFormatter.multiplier = 1.0
-        pFormatter.percentSymbol = " %"
-        
-        let dFormatter = DefaultValueFormatter(formatter: pFormatter)
-        data.setValueFormatter(dFormatter)
-        
-        chartView.data = data
-        chartView.highlightValues(nil)
-        
-        chartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
-    }
+    
 
+}
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let ide = indexPath.row == 0 ? "Sale" : "Buy"
+        let cell = tableView.dequeueReusableCell(withIdentifier: ide, for: indexPath)
+        
+        return cell
+    }
 }
