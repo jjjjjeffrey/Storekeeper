@@ -16,6 +16,7 @@
 		7B36179C1F0E12B4004E7850 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179A1F0E12B4004E7850 /* Main.storyboard */; };
 		7B36179E1F0E12B4004E7850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179D1F0E12B4004E7850 /* Assets.xcassets */; };
 		7B3617A11F0E12B4004E7850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179F1F0E12B4004E7850 /* LaunchScreen.storyboard */; };
+		7B6140341F21958D0022C994 /* OrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6140331F21958D0022C994 /* OrderListTableViewController.swift */; };
 		7B62F9641F20521900A064E0 /* SKNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */; };
 		7BA42ED31F15B2DD00F9344B /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */; };
 		7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */; };
@@ -42,6 +43,7 @@
 		7B36179D1F0E12B4004E7850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B3617A01F0E12B4004E7850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B3617A21F0E12B4004E7850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B6140331F21958D0022C994 /* OrderListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListTableViewController.swift; sourceTree = "<group>"; };
 		7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNavigationViewController.swift; sourceTree = "<group>"; };
 		7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewController.swift; sourceTree = "<group>"; };
 		7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */,
 				7BE3910F1F171FB5003524DB /* GoodsSelectViewController.swift */,
 				7BE391131F172A24003524DB /* GoodsSelectedPoolViewController.swift */,
+				7B6140331F21958D0022C994 /* OrderListTableViewController.swift */,
 				7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */,
 				7BFF2B421F15EA460062FCC7 /* Goods.storyboard */,
 				7BA5A8391F15CB930037179C /* Member.storyboard */,
@@ -280,6 +283,7 @@
 				7B3617971F0E12B4004E7850 /* AppDelegate.swift in Sources */,
 				7BE391141F172A24003524DB /* GoodsSelectedPoolViewController.swift in Sources */,
 				7BFF2B411F15D0BD0062FCC7 /* SelectMemberViewController.swift in Sources */,
+				7B6140341F21958D0022C994 /* OrderListTableViewController.swift in Sources */,
 				7B62F9641F20521900A064E0 /* SKNavigationViewController.swift in Sources */,
 				7BA42ED31F15B2DD00F9344B /* MembersTableViewController.swift in Sources */,
 				7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */,
