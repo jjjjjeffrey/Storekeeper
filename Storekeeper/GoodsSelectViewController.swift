@@ -13,7 +13,7 @@ class GoodsSelectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "商品选择"
     }
 
     override func didReceiveMemoryWarning() {
