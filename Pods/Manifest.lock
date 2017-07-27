@@ -4,6 +4,7 @@ PODS:
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
   - Charts/Core (3.0.2)
+  - CryptoSwift (0.6.9)
   - FileKit (4.0.1)
   - HandyJSON (1.7.2)
   - IBAnimatable (3.1.3)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - AFDateHelper (~> 4.0)
   - Alamofire (~> 4.0)
   - Charts (~> 3.0)
+  - CryptoSwift
   - FileKit (~> 4.0)
   - HandyJSON (~> 1.0)
   - IBAnimatable (~> 3.0)
@@ -40,6 +42,7 @@ SPEC CHECKSUMS:
   AFDateHelper: 0f9588a442b4d7ef862568ae5d40ab883672efb5
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  CryptoSwift: a22f6ba238e9ce4d26ee7bf45b9ed82e7122d4a0
   FileKit: 1ea916f594bc0bb9a3951f80edf92b52bb7f883c
   HandyJSON: e7ad0483005826baba1d1c251cd98d0aa8bd8cce
   IBAnimatable: ad640d47659cbbfa4cf88a127fdc663b2ec4c66a
@@ -51,6 +54,6 @@ SPEC CHECKSUMS:
   SwiftQRCode: 280589699d84195c2c573011aa52f2c015c31c34
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 657df24f88a83deedafc84d0ad5f2a8ce8c4d416
+PODFILE CHECKSUM: 1e78148e1dd5f6ec3ccf6f22138d0536d0bb56a6
 
 COCOAPODS: 1.2.1

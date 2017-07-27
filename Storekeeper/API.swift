@@ -9,6 +9,7 @@
 import Foundation
 import HandyJSON
 import JeffreyKit
+import CryptoSwift
 
 struct AppResponse<T>: JSONDecodable, HandyJSON {
     var code: Int?
@@ -30,10 +31,56 @@ struct APILogin: HTTPRequest {
     var parameter: [String: Any] = [:]
     
     init(mobile: String, password: String) {
-        parameter = ["mobile": mobile, "password": password]
+        let md5pass = password.md5()
+        parameter = ["mobile": mobile, "password": md5pass]
     }
     
 }
 
+struct APISendSMSCode: HTTPRequest {
+    
+    typealias Response = AppResponse<String>
+    
+    var path: String = "/smsCode"
+    
+    let method: HTTPMethod = .post
+    var parameter: [String: Any] = [:]
+    
+    init(mobile: String) {
+        parameter = ["mobile": mobile]
+    }
+    
+}
+
+struct APIAuthSMSCode: HTTPRequest {
+    
+    typealias Response = AppResponse<String>
+    
+    var path: String = "/authSMSCode"
+    
+    let method: HTTPMethod = .post
+    var parameter: [String: Any] = [:]
+    
+    init(mobile: String, code: String) {
+        parameter = ["mobile": mobile, "code": code]
+    }
+    
+}
+
+struct APIRegister: HTTPRequest {
+    
+    typealias Response = AppResponse<User>
+    
+    var path: String = "/register"
+    
+    let method: HTTPMethod = .post
+    var parameter: [String: Any] = [:]
+    
+    init(mobile: String, shopName: String, password: String) {
+        let md5pass = password.md5()
+        parameter = ["mobile": mobile, "shopName": shopName, "password": md5pass]
+    }
+    
+}
 
 

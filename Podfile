@@ -19,4 +19,5 @@ target 'Storekeeper' do
   pod 'SwifterSwift', '~> 1.0'
   pod 'SwiftQRCode', '~> 3.0'
   pod 'Charts', '~> 3.0'
+  pod 'CryptoSwift'
 end

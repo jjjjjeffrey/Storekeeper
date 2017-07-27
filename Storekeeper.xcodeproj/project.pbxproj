@@ -20,6 +20,8 @@
 		7B3617A11F0E12B4004E7850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179F1F0E12B4004E7850 /* LaunchScreen.storyboard */; };
 		7B6140341F21958D0022C994 /* OrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6140331F21958D0022C994 /* OrderListTableViewController.swift */; };
 		7B62F9641F20521900A064E0 /* SKNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */; };
+		7B7B4C1B1F2988BE0021FE02 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B4C1A1F2988BE0021FE02 /* RegisterViewController.swift */; };
+		7B7B4C1D1F299F9D0021FE02 /* RegisterDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B4C1C1F299F9D0021FE02 /* RegisterDoneViewController.swift */; };
 		7BA42ED31F15B2DD00F9344B /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */; };
 		7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */; };
 		7BA42ED81F15C22C00F9344B /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA42ED71F15C22C00F9344B /* Mine.storyboard */; };
@@ -60,6 +62,8 @@
 		7B3617A21F0E12B4004E7850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B6140331F21958D0022C994 /* OrderListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListTableViewController.swift; sourceTree = "<group>"; };
 		7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNavigationViewController.swift; sourceTree = "<group>"; };
+		7B7B4C1A1F2988BE0021FE02 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		7B7B4C1C1F299F9D0021FE02 /* RegisterDoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDoneViewController.swift; sourceTree = "<group>"; };
 		7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewController.swift; sourceTree = "<group>"; };
 		7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7BA42ED71F15C22C00F9344B /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				7B161B491F21E23100EFB1B8 /* GoodsUnitViewController.swift */,
 				7B6140331F21958D0022C994 /* OrderListTableViewController.swift */,
 				7BA659C91F287B1E00574BEF /* LoginViewController.swift */,
+				7B7B4C1A1F2988BE0021FE02 /* RegisterViewController.swift */,
+				7B7B4C1C1F299F9D0021FE02 /* RegisterDoneViewController.swift */,
 				7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */,
 				7BA659CB1F287B7B00574BEF /* SKTabBarViewController.swift */,
 				7BA659D41F287D7300574BEF /* Cache.swift */,
@@ -324,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B2BFE841F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift in Sources */,
+				7B7B4C1D1F299F9D0021FE02 /* RegisterDoneViewController.swift in Sources */,
 				7BACDFF41F1626C5000306A7 /* PutInStorageViewController.swift in Sources */,
 				7B2BFE641F0E240300F0FDB4 /* BarcodeSaleViewController.swift in Sources */,
 				7B161B4A1F21E23100EFB1B8 /* GoodsUnitViewController.swift in Sources */,
@@ -346,6 +353,7 @@
 				7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */,
 				7BA659DB1F287EAA00574BEF /* UIViewControllerExtensions.swift in Sources */,
 				7BA612E51F0E74BE0066017F /* SaleViewController.swift in Sources */,
+				7B7B4C1B1F2988BE0021FE02 /* RegisterViewController.swift in Sources */,
 				7BA659CC1F287B7B00574BEF /* SKTabBarViewController.swift in Sources */,
 				7BA659D31F287D5100574BEF /* User.swift in Sources */,
 			);
