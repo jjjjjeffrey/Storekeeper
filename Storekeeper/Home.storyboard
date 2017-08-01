@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QVB-LZ-8eb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QVB-LZ-8eb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,10 +41,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uI3-tG-VTy">
-                                <rect key="frame" x="0.0" y="64" width="375" height="489"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xYT-1y-MRc">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="489"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Sale" id="Ybz-uT-dBp">
@@ -168,59 +168,27 @@
                                     </tableView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vRh-c6-zmQ">
-                                <rect key="frame" x="15" y="553" width="345" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T02-bu-3eC" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="0.0" width="165" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="销售开单"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="eF1-ne-IoF" kind="show" id="WUm-lg-sfW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-Ch-2PG" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="180" y="0.0" width="165" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="商品入库"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="zQg-xE-Ypb" kind="show" id="QUn-EB-mUH"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="d2K-cv-btN"/>
-                                </constraints>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uI3-tG-VTy" firstAttribute="top" secondItem="pv0-2q-1FL" secondAttribute="bottom" id="0dU-VD-oGz"/>
-                            <constraint firstAttribute="trailing" secondItem="vRh-c6-zmQ" secondAttribute="trailing" constant="15" id="1DS-9X-dzh"/>
                             <constraint firstItem="uI3-tG-VTy" firstAttribute="leading" secondItem="jtM-2u-z87" secondAttribute="leading" id="SP5-Ow-sO8"/>
-                            <constraint firstItem="vRh-c6-zmQ" firstAttribute="top" secondItem="uI3-tG-VTy" secondAttribute="bottom" id="p9V-V8-dCd"/>
-                            <constraint firstItem="cdx-ZT-Dle" firstAttribute="top" secondItem="vRh-c6-zmQ" secondAttribute="bottom" constant="15" id="qkX-el-h8d"/>
-                            <constraint firstItem="vRh-c6-zmQ" firstAttribute="leading" secondItem="jtM-2u-z87" secondAttribute="leading" constant="15" id="ugI-zW-qhc"/>
+                            <constraint firstItem="cdx-ZT-Dle" firstAttribute="top" secondItem="uI3-tG-VTy" secondAttribute="bottom" id="UNL-Bx-85e"/>
                             <constraint firstAttribute="trailing" secondItem="uI3-tG-VTy" secondAttribute="trailing" id="vkU-fv-W7i"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="首页" id="4w5-cA-9fZ"/>
+                    <navigationItem key="navigationItem" title="首页" id="4w5-cA-9fZ">
+                        <barButtonItem key="leftBarButtonItem" title="商品入库" id="OTt-Bq-p1s">
+                            <connections>
+                                <segue destination="zQg-xE-Ypb" kind="show" id="ph1-aa-Ach"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="销售开单" id="7sv-lu-fSO">
+                            <connections>
+                                <segue destination="eF1-ne-IoF" kind="show" id="Huz-vL-jIQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainStackView" destination="uI3-tG-VTy" id="Ev3-cW-GB5"/>
                         <outlet property="placeholder" destination="xcs-jU-ptK" id="HEL-5n-dfg"/>

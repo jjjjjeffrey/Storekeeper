@@ -43,4 +43,9 @@ extension User {
         AppValueCache.user.remove()
     }
     
+    
+    static func logout() {
+        removeCurrentUser()
+        NotificationCenter.default.send(notification: APPNotification.logout)
+    }
 }

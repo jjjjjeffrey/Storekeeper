@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.tintColor = UIColor(hex: 0xFF2D55)
         
-//        User.initialize()
+        User.initialize()
         
         return true
     }

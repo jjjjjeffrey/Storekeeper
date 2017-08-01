@@ -83,4 +83,30 @@ struct APIRegister: HTTPRequest {
     
 }
 
+struct APIGoodsCategories: HTTPRequest {
+    
+    typealias Response = AppResponse<[GoodsCategory]>
+    
+    var path: String = "/goodsCategory"
+    
+    let method: HTTPMethod = .get
+    var parameter: [String: Any] = [:]
+    
+    
+}
+
+struct APIAddGoodsCategory: HTTPRequest {
+    
+    typealias Response = AppResponse<GoodsCategory>
+    
+    var path: String = "/goodsCategory"
+    
+    let method: HTTPMethod = .post
+    var parameter: [String: Any] = [:]
+    
+    init(category: GoodsCategory) {
+        parameter = category.toJSON() ?? [:]
+    }
+}
+
 

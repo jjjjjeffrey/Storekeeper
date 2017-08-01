@@ -14,5 +14,5 @@ enum APINotification: String, Notification {
 }
 
 enum APPNotification: String, Notification {
-    case login
+    case login, logout
 }

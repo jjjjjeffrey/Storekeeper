@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B1q-Hx-Uqa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="B1q-Hx-Uqa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -648,7 +648,7 @@
         <!--新增商品-->
         <scene sceneID="reV-52-Xfa">
             <objects>
-                <tableViewController id="eLN-Jr-DbW" sceneMemberID="viewController">
+                <tableViewController id="eLN-Jr-DbW" customClass="AddGoodsVarietyViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="3Pb-om-VBo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -723,14 +723,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="类型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHB-NG-VXq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="类别" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHB-NG-VXq">
                                                     <rect key="frame" x="15" y="19" width="35" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="零食" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtk-gO-7Lo">
-                                                    <rect key="frame" x="311" y="20.5" width="31" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtk-gO-7Lo">
+                                                    <rect key="frame" x="296" y="20.5" width="46" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -853,12 +853,15 @@
                     <navigationItem key="navigationItem" title="新增商品" id="DgR-8y-TK3">
                         <barButtonItem key="rightBarButtonItem" title="保存" id="r2J-4F-3OK"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoryLabel" destination="Rtk-gO-7Lo" id="2J1-nF-xgm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGy-Js-dxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1955" y="-260"/>
         </scene>
-        <!--商品类型-->
+        <!--商品类别-->
         <scene sceneID="V2E-kI-GP6">
             <objects>
                 <tableViewController id="YSB-v8-ePz" customClass="GoodsCategoryManagementViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
@@ -890,13 +893,77 @@
                             <outlet property="delegate" destination="YSB-v8-ePz" id="eKG-1c-Aek"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="商品类型" id="Vkw-Uo-nNM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="axb-pc-7BU"/>
+                    <navigationItem key="navigationItem" title="商品类别" id="Vkw-Uo-nNM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="axb-pc-7BU">
+                            <connections>
+                                <segue destination="5bl-OT-Cco" kind="show" id="coz-k5-Q7E"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xmk-if-3MT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2982" y="-556"/>
+        </scene>
+        <!--新增类别-->
+        <scene sceneID="fFN-cU-Lz4">
+            <objects>
+                <tableViewController id="5bl-OT-Cco" customClass="AddGoodsCategoryViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="KMY-pd-gIV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="DW6-yf-tA0">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kw9-k4-HjB">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kw9-k4-HjB" id="9Xc-F4-9jD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGN-bH-N1k">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="59.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="editingDidChanged:" destination="5bl-OT-Cco" eventType="editingChanged" id="TYU-9Q-ELs"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aGN-bH-N1k" firstAttribute="leading" secondItem="9Xc-F4-9jD" secondAttribute="leading" constant="15" id="B5D-BK-Tgq"/>
+                                                <constraint firstAttribute="trailing" secondItem="aGN-bH-N1k" secondAttribute="trailing" constant="15" id="Tx2-bg-3Uc"/>
+                                                <constraint firstItem="aGN-bH-N1k" firstAttribute="top" secondItem="9Xc-F4-9jD" secondAttribute="top" id="bpx-F7-6DK"/>
+                                                <constraint firstAttribute="bottom" secondItem="aGN-bH-N1k" secondAttribute="bottom" id="dVt-fk-wN7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="5bl-OT-Cco" id="Lup-QO-2bF"/>
+                            <outlet property="delegate" destination="5bl-OT-Cco" id="QbM-p1-auJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="新增类别" id="zWX-Hm-dFm">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="asX-AK-88y">
+                            <connections>
+                                <action selector="saveButtonClicked:" destination="5bl-OT-Cco" id="Bjr-bp-eJR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="asX-AK-88y" id="kvy-hb-uo3"/>
+                        <outlet property="textField" destination="aGN-bH-N1k" id="4OZ-JX-uq3"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0W4-4n-fAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3812" y="-556"/>
         </scene>
         <!--商品单位-->
         <scene sceneID="PLH-CA-Arz">
@@ -1010,6 +1077,9 @@
                             <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="pickerView" destination="oit-lb-rfZ" id="LP9-Qc-kt8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56T-I3-S6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JwT-7a-pAq" userLabel="Exit" sceneMemberID="exit"/>

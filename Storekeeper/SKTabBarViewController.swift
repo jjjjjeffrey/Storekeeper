@@ -15,10 +15,14 @@ class SKTabBarViewController: UITabBarController, SeguePerformable {
         case showLogin
     }
     
+    var logoutNotifi: NSObjectProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        logoutNotifi = NotificationCenter.default.addObserver(forNotification: APPNotification.logout) { (notifi) in
+            self.perform(segue: Segue.showLogin, sender: self)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

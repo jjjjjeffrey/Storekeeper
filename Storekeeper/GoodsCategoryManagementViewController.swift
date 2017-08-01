@@ -7,17 +7,47 @@
 //
 
 import UIKit
+import PKHUD
 
 class GoodsCategoryManagementViewController: UITableViewController {
 
+    var categories: [GoodsCategory] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var callback: ((GoodsCategory) -> Void)?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        loadData()
+    }
+    
+    func loadData() {
+        let req = APIGoodsCategories()
+        httpClient.send(req) { (response) in
+            guard let cs = response?.data else {
+                return
+            }
+            self.categories = cs
+        }
+    }
+    
+    func create(category: GoodsCategory, complete: @escaping (Bool) -> Void) {
+        HUD.show(.progress)
+        let req = APIAddGoodsCategory(category: category)
+        httpClient.send(req) { (response) in
+            guard let c = response?.data else {
+                HUD.flash(.labeledError(title: "提示", subtitle: response?.message ?? "添加失败"), delay: 1.5)
+                return complete(false)
+            }
+            HUD.hide()
+            complete(true)
+            self.categories.insert(c, at: 0)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,61 +62,40 @@ class GoodsCategoryManagementViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return categories.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
+        let category = categories[indexPath.row]
+        cell.textLabel?.text = category.name
 
         return cell
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = categories[indexPath.row]
+        callback?(category)
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? AddGoodsCategoryViewController {
+            vc.callback = { c in
+                self.create(category: c, complete: { (success) in
+                    if success {
+                        vc.navigationController?.popViewController()
+                    }
+                })
+            }
+        }
     }
-    */
+    
 
 }

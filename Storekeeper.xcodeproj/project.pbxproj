@@ -14,7 +14,6 @@
 		7B2BFE641F0E240300F0FDB4 /* BarcodeSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */; };
 		7B2BFE841F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */; };
 		7B3617971F0E12B4004E7850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3617961F0E12B4004E7850 /* AppDelegate.swift */; };
-		7B3617991F0E12B4004E7850 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3617981F0E12B4004E7850 /* ViewController.swift */; };
 		7B36179C1F0E12B4004E7850 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179A1F0E12B4004E7850 /* Main.storyboard */; };
 		7B36179E1F0E12B4004E7850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179D1F0E12B4004E7850 /* Assets.xcassets */; };
 		7B3617A11F0E12B4004E7850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179F1F0E12B4004E7850 /* LaunchScreen.storyboard */; };
@@ -39,6 +38,10 @@
 		7BA659DD1F287EE300574BEF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA659DC1F287EE300574BEF /* API.swift */; };
 		7BA659DF1F28817B00574BEF /* SeguePerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA659DE1F28817B00574BEF /* SeguePerformable.swift */; };
 		7BACDFF41F1626C5000306A7 /* PutInStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */; };
+		7BAD1FC91F3014E80074F71C /* GoodsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD1FC81F3014E80074F71C /* GoodsCategory.swift */; };
+		7BAD1FCB1F3016C40074F71C /* MineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD1FCA1F3016C40074F71C /* MineTableViewController.swift */; };
+		7BAD1FCD1F301D160074F71C /* AddGoodsCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD1FCC1F301D160074F71C /* AddGoodsCategoryViewController.swift */; };
+		7BAD1FCF1F30629D0074F71C /* AddGoodsVarietyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD1FCE1F30629D0074F71C /* AddGoodsVarietyViewController.swift */; };
 		7BE391101F171FB5003524DB /* GoodsSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3910F1F171FB5003524DB /* GoodsSelectViewController.swift */; };
 		7BE391141F172A24003524DB /* GoodsSelectedPoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE391131F172A24003524DB /* GoodsSelectedPoolViewController.swift */; };
 		7BFF2B411F15D0BD0062FCC7 /* SelectMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF2B401F15D0BD0062FCC7 /* SelectMemberViewController.swift */; };
@@ -55,7 +58,6 @@
 		7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCategoryPickerViewController.swift; sourceTree = "<group>"; };
 		7B3617931F0E12B4004E7850 /* Storekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3617961F0E12B4004E7850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7B3617981F0E12B4004E7850 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B36179B1F0E12B4004E7850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B36179D1F0E12B4004E7850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B3617A01F0E12B4004E7850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +83,10 @@
 		7BA659DC1F287EE300574BEF /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7BA659DE1F28817B00574BEF /* SeguePerformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeguePerformable.swift; sourceTree = "<group>"; };
 		7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutInStorageViewController.swift; sourceTree = "<group>"; };
+		7BAD1FC81F3014E80074F71C /* GoodsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCategory.swift; sourceTree = "<group>"; };
+		7BAD1FCA1F3016C40074F71C /* MineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineTableViewController.swift; sourceTree = "<group>"; };
+		7BAD1FCC1F301D160074F71C /* AddGoodsCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoodsCategoryViewController.swift; sourceTree = "<group>"; };
+		7BAD1FCE1F30629D0074F71C /* AddGoodsVarietyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoodsVarietyViewController.swift; sourceTree = "<group>"; };
 		7BE3910F1F171FB5003524DB /* GoodsSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsSelectViewController.swift; sourceTree = "<group>"; };
 		7BE391131F172A24003524DB /* GoodsSelectedPoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsSelectedPoolViewController.swift; sourceTree = "<group>"; };
 		7BFF2B401F15D0BD0062FCC7 /* SelectMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectMemberViewController.swift; sourceTree = "<group>"; };
@@ -130,36 +136,20 @@
 			isa = PBXGroup;
 			children = (
 				7B3617961F0E12B4004E7850 /* AppDelegate.swift */,
-				7B3617981F0E12B4004E7850 /* ViewController.swift */,
-				7BA612E41F0E74BE0066017F /* SaleViewController.swift */,
-				7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */,
-				7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */,
-				7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */,
-				7BFF2B401F15D0BD0062FCC7 /* SelectMemberViewController.swift */,
-				7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */,
-				7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */,
-				7BE3910F1F171FB5003524DB /* GoodsSelectViewController.swift */,
-				7BE391131F172A24003524DB /* GoodsSelectedPoolViewController.swift */,
-				7B161B471F21E19500EFB1B8 /* GoodsCategoryManagementViewController.swift */,
-				7B161B491F21E23100EFB1B8 /* GoodsUnitViewController.swift */,
-				7B6140331F21958D0022C994 /* OrderListTableViewController.swift */,
-				7BA659C91F287B1E00574BEF /* LoginViewController.swift */,
-				7B7B4C1A1F2988BE0021FE02 /* RegisterViewController.swift */,
-				7B7B4C1C1F299F9D0021FE02 /* RegisterDoneViewController.swift */,
-				7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */,
-				7BA659CB1F287B7B00574BEF /* SKTabBarViewController.swift */,
+				7BAD1FC01F3013410074F71C /* HomeViewController */,
+				7BAD1FC11F30135C0074F71C /* SecondViewController */,
+				7BAD1FC21F30138B0074F71C /* ThirdViewController */,
+				7BAD1FC41F3013E70074F71C /* GoodsViewController */,
+				7BAD1FC61F3014770074F71C /* SaleViewController */,
+				7BAD1FC31F3013B70074F71C /* LoginViewController */,
+				7BAD1FC51F30144E0074F71C /* BaseViewController */,
 				7BA659D41F287D7300574BEF /* Cache.swift */,
-				7BA659D21F287D5100574BEF /* User.swift */,
+				7BAD1FC71F3014AA0074F71C /* Model */,
 				7BA659D61F287DB700574BEF /* Notifications.swift */,
 				7BA659D81F287DF400574BEF /* Global.swift */,
 				7BA659DA1F287EAA00574BEF /* UIViewControllerExtensions.swift */,
 				7BA659DE1F28817B00574BEF /* SeguePerformable.swift */,
 				7BA659D11F287D1D00574BEF /* Network */,
-				7BA659C71F2874D300574BEF /* Login.storyboard */,
-				7BFF2B421F15EA460062FCC7 /* Goods.storyboard */,
-				7BA5A8391F15CB930037179C /* Member.storyboard */,
-				7B2BFE611F0E1C5900F0FDB4 /* Home.storyboard */,
-				7BA42ED71F15C22C00F9344B /* Mine.storyboard */,
 				7B36179A1F0E12B4004E7850 /* Main.storyboard */,
 				7B36179D1F0E12B4004E7850 /* Assets.xcassets */,
 				7B36179F1F0E12B4004E7850 /* LaunchScreen.storyboard */,
@@ -175,6 +165,89 @@
 				7BA659DC1F287EE300574BEF /* API.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		7BAD1FC01F3013410074F71C /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7B2BFE611F0E1C5900F0FDB4 /* Home.storyboard */,
+				7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */,
+			);
+			name = HomeViewController;
+			sourceTree = "<group>";
+		};
+		7BAD1FC11F30135C0074F71C /* SecondViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BA5A8391F15CB930037179C /* Member.storyboard */,
+				7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */,
+				7BFF2B401F15D0BD0062FCC7 /* SelectMemberViewController.swift */,
+			);
+			name = SecondViewController;
+			sourceTree = "<group>";
+		};
+		7BAD1FC21F30138B0074F71C /* ThirdViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BA42ED71F15C22C00F9344B /* Mine.storyboard */,
+				7B6140331F21958D0022C994 /* OrderListTableViewController.swift */,
+				7BAD1FCA1F3016C40074F71C /* MineTableViewController.swift */,
+			);
+			name = ThirdViewController;
+			sourceTree = "<group>";
+		};
+		7BAD1FC31F3013B70074F71C /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BA659C71F2874D300574BEF /* Login.storyboard */,
+				7BA659C91F287B1E00574BEF /* LoginViewController.swift */,
+				7B7B4C1A1F2988BE0021FE02 /* RegisterViewController.swift */,
+				7B7B4C1C1F299F9D0021FE02 /* RegisterDoneViewController.swift */,
+			);
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
+		7BAD1FC41F3013E70074F71C /* GoodsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */,
+				7BAD1FCE1F30629D0074F71C /* AddGoodsVarietyViewController.swift */,
+				7BE3910F1F171FB5003524DB /* GoodsSelectViewController.swift */,
+				7BE391131F172A24003524DB /* GoodsSelectedPoolViewController.swift */,
+				7B161B471F21E19500EFB1B8 /* GoodsCategoryManagementViewController.swift */,
+				7BAD1FCC1F301D160074F71C /* AddGoodsCategoryViewController.swift */,
+				7B161B491F21E23100EFB1B8 /* GoodsUnitViewController.swift */,
+				7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */,
+				7BFF2B421F15EA460062FCC7 /* Goods.storyboard */,
+			);
+			name = GoodsViewController;
+			sourceTree = "<group>";
+		};
+		7BAD1FC51F30144E0074F71C /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */,
+				7BA659CB1F287B7B00574BEF /* SKTabBarViewController.swift */,
+			);
+			name = BaseViewController;
+			sourceTree = "<group>";
+		};
+		7BAD1FC61F3014770074F71C /* SaleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BA612E41F0E74BE0066017F /* SaleViewController.swift */,
+				7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */,
+			);
+			name = SaleViewController;
+			sourceTree = "<group>";
+		};
+		7BAD1FC71F3014AA0074F71C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7BA659D21F287D5100574BEF /* User.swift */,
+				7BAD1FC81F3014E80074F71C /* GoodsCategory.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		F75E844C0136B11FA7A3AC08 /* Pods */ = {
@@ -329,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BAD1FCD1F301D160074F71C /* AddGoodsCategoryViewController.swift in Sources */,
 				7B2BFE841F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift in Sources */,
 				7B7B4C1D1F299F9D0021FE02 /* RegisterDoneViewController.swift in Sources */,
 				7BACDFF41F1626C5000306A7 /* PutInStorageViewController.swift in Sources */,
@@ -339,7 +413,6 @@
 				7B161B481F21E19500EFB1B8 /* GoodsCategoryManagementViewController.swift in Sources */,
 				7BA659D91F287DF400574BEF /* Global.swift in Sources */,
 				7BA659D51F287D7300574BEF /* Cache.swift in Sources */,
-				7B3617991F0E12B4004E7850 /* ViewController.swift in Sources */,
 				7B3617971F0E12B4004E7850 /* AppDelegate.swift in Sources */,
 				7BE391141F172A24003524DB /* GoodsSelectedPoolViewController.swift in Sources */,
 				7BFF2B411F15D0BD0062FCC7 /* SelectMemberViewController.swift in Sources */,
@@ -351,8 +424,11 @@
 				7BA659D71F287DB700574BEF /* Notifications.swift in Sources */,
 				7BA659D01F287D1600574BEF /* HTTPClient.swift in Sources */,
 				7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */,
+				7BAD1FCF1F30629D0074F71C /* AddGoodsVarietyViewController.swift in Sources */,
 				7BA659DB1F287EAA00574BEF /* UIViewControllerExtensions.swift in Sources */,
 				7BA612E51F0E74BE0066017F /* SaleViewController.swift in Sources */,
+				7BAD1FC91F3014E80074F71C /* GoodsCategory.swift in Sources */,
+				7BAD1FCB1F3016C40074F71C /* MineTableViewController.swift in Sources */,
 				7B7B4C1B1F2988BE0021FE02 /* RegisterViewController.swift in Sources */,
 				7BA659CC1F287B7B00574BEF /* SKTabBarViewController.swift in Sources */,
 				7BA659D31F287D5100574BEF /* User.swift in Sources */,

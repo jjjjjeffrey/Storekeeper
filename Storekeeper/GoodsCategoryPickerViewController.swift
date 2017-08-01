@@ -11,10 +11,29 @@ import IBAnimatable
 
 class GoodsCategoryPickerViewController: AnimatableModalViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    var categories: [GoodsCategory] = [] {
+        didSet {
+            pickerView.reloadAllComponents()
+        }
+    }
+    
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loadData()
+    }
+    
+    func loadData() {
+        let req = APIGoodsCategories()
+        httpClient.send(req) { (response) in
+            guard let cs = response?.data else {
+                return
+            }
+            self.categories = cs
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,12 +58,13 @@ class GoodsCategoryPickerViewController: AnimatableModalViewController, UIPicker
     
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 10
+        return categories.count
     }
     
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "分类 \(row+1)"
+        let category = categories[row]
+        return "\(category.name ?? "")"
     }
     
     
