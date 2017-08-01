@@ -109,4 +109,18 @@ struct APIAddGoodsCategory: HTTPRequest {
     }
 }
 
+struct APIDeleteGoodsCategory: HTTPRequest {
+    
+    typealias Response = AppResponse<GoodsCategory>
+    
+    var path: String = "/goodsCategory"
+    
+    let method: HTTPMethod = .delete
+    var parameter: [String: Any] = [:]
+    
+    init(category: GoodsCategory) {
+        path += "/\(category.id ?? -1)"
+    }
+}
+
 

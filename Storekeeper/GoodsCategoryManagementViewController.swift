@@ -49,6 +49,20 @@ class GoodsCategoryManagementViewController: UITableViewController {
             self.categories.insert(c, at: 0)
         }
     }
+    
+    func delete(indexPath: IndexPath) {
+        HUD.show(.progress)
+        let category = categories[indexPath.row]
+        let req = APIDeleteGoodsCategory(category: category)
+        httpClient.send(req) { (response) in
+            guard let c = response?.code, c == 0 else {
+                HUD.flash(.labeledError(title: "提示", subtitle: response?.message ?? "删除失败"), delay: 1.5)
+                return
+            }
+            HUD.hide()
+            self.categories.remove(at: indexPath.row)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,6 +93,13 @@ class GoodsCategoryManagementViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = categories[indexPath.row]
         callback?(category)
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let action = UITableViewRowAction(style: .default, title: "删除") { (action, indexPath) in
+            self.delete(indexPath: indexPath)
+        }
+        return [action]
     }
 
     
