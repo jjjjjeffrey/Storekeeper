@@ -13,12 +13,17 @@ class GoodsCategoryPickerViewController: AnimatableModalViewController, UIPicker
 
     var categories: [GoodsCategory] = [] {
         didSet {
+            selectedCategory = categories.item(at: 0)
             pickerView.reloadAllComponents()
         }
     }
     
+    var selectedCategory: GoodsCategory?
+    
     @IBOutlet weak var pickerView: UIPickerView!
     
+    
+    var callback: ((GoodsCategory) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +40,14 @@ class GoodsCategoryPickerViewController: AnimatableModalViewController, UIPicker
             self.categories = cs
         }
     }
+    
+    @IBAction func doneButtonClicked(_ sender: Any) {
+        guard let c = selectedCategory else {
+            return
+        }
+        callback?(c)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,6 +78,10 @@ class GoodsCategoryPickerViewController: AnimatableModalViewController, UIPicker
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let category = categories[row]
         return "\(category.name ?? "")"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedCategory = categories[row]
     }
     
     

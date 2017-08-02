@@ -7,13 +7,43 @@
 //
 
 import UIKit
+import SwifterSwift
 
 class GoodsSelectViewController: UIViewController {
 
+    var categories: [GoodsCategory] = [] {
+        didSet {
+            selectedCategory = categories.item(at: 0)
+        }
+    }
+    
+    var selectedCategory: GoodsCategory? {
+        didSet {
+            if let c = selectedCategory {
+                loadGoods(for: c)
+                categoryButton.setTitleForAllStates(c.name ?? "")
+            }
+            
+        }
+    }
+    
+    
+    var goods: [Goods] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var categoryButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "商品选择"
+        
+        loadCategories()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,27 +51,61 @@ class GoodsSelectViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func loadGoods(for category: GoodsCategory) {
+        let req = APIGoods(category: category)
+        httpClient.send(req) { (response) in
+            guard let gs = response?.data else {
+                return
+            }
+            self.goods = gs
+        }
+    }
+    
+    func loadCategories() {
+        let req = APIGoodsCategories()
+        httpClient.send(req) { (response) in
+            guard let cs = response?.data else {
+                return
+            }
+            self.categories = cs
+        }
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? GoodsCategoryPickerViewController {
+            vc.callback = { c in
+                self.selectedCategory = c
+            }
+        }
     }
-    */
+    
 
 }
 
 extension GoodsSelectViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return goods.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SomeLongIdentifierCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GoodsTableViewCell", for: indexPath)
+        
+        if let c = cell as? GoodsTableViewCell {
+            
+            let gs = goods[indexPath.row]
+            c.nameLabel.text = gs.name
+            c.stockLabel.text = "库存：\(gs.stock ?? 0)\(gs.unit ?? "")"
+            
+            
+        }
+        
+        
         return cell
     }
     
