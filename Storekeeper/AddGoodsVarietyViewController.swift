@@ -11,6 +11,7 @@ import UIKit
 class AddGoodsVarietyViewController: UITableViewController {
 
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var unitLabel: UILabel!
     
     var category: GoodsCategory? {
         didSet {
@@ -18,6 +19,15 @@ class AddGoodsVarietyViewController: UITableViewController {
                 return
             }
             categoryLabel.text = c.name
+        }
+    }
+    
+    var unit: GoodsUnit? {
+        didSet {
+            guard let u = unit else {
+                return
+            }
+            unitLabel.text = u.name
         }
     }
     
@@ -42,9 +52,14 @@ class AddGoodsVarietyViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? GoodsCategoryManagementViewController {
+        if let vc = segue.destination as? GoodsCategoriesViewController {
             vc.callback = { c in
                 self.category = c
+                vc.navigationController?.popViewController()
+            }
+        } else if let vc = segue.destination as? GoodsUnitsViewController {
+            vc.callback = { u in
+                self.unit = u
                 vc.navigationController?.popViewController()
             }
         }

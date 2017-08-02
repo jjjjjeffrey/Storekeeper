@@ -1,5 +1,5 @@
 //
-//  GoodsCategoryManagementViewController.swift
+//  GoodsUnitViewController.swift
 //  Storekeeper
 //
 //  Created by zengdaqian on 2017/7/21.
@@ -9,16 +9,15 @@
 import UIKit
 import PKHUD
 
-class GoodsCategoryManagementViewController: UITableViewController {
+class GoodsUnitsViewController: UITableViewController {
 
-    var categories: [GoodsCategory] = [] {
+    var units: [GoodsUnit] = [] {
         didSet {
             tableView.reloadData()
         }
     }
     
-    var callback: ((GoodsCategory) -> Void)?
-    
+    var callback: ((GoodsUnit) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,40 +26,41 @@ class GoodsCategoryManagementViewController: UITableViewController {
     }
     
     func loadData() {
-        let req = APIGoodsCategories()
+        HUD.show(.progress)
+        let req = APIGoodsUnits()
         httpClient.send(req) { (response) in
-            guard let cs = response?.data else {
-                return
+            guard let us = response?.data else {
+                return self.showErrorHud(message: response?.message ?? "加载失败")
             }
-            self.categories = cs
+            HUD.hide()
+            self.units = us
         }
     }
     
-    func create(category: GoodsCategory, complete: @escaping (Bool) -> Void) {
+    func create(unit: GoodsUnit, complete: @escaping (Bool) -> Void) {
         HUD.show(.progress)
-        let req = APIAddGoodsCategory(category: category)
+        let req = APIAddGoodsUnit(unit: unit)
         httpClient.send(req) { (response) in
-            guard let c = response?.data else {
-                HUD.flash(.labeledError(title: "提示", subtitle: response?.message ?? "添加失败"), delay: 1.5)
+            guard let u = response?.data else {
+                self.showErrorHud(message: response?.message ?? "添加失败")
                 return complete(false)
             }
             HUD.hide()
             complete(true)
-            self.categories.insert(c, at: 0)
+            self.units.insert(u, at: 0)
         }
     }
     
     func delete(indexPath: IndexPath) {
         HUD.show(.progress)
-        let category = categories[indexPath.row]
-        let req = APIDeleteGoodsCategory(category: category)
+        let unit = units[indexPath.row]
+        let req = APIDeleteGoodsUnit(unit: unit)
         httpClient.send(req) { (response) in
             guard let c = response?.code, c == 0 else {
-                HUD.flash(.labeledError(title: "提示", subtitle: response?.message ?? "删除失败"), delay: 1.5)
-                return
+                return self.showErrorHud(message: response?.message ?? "删除失败")
             }
             HUD.hide()
-            self.categories.remove(at: indexPath.row)
+            self.units.remove(at: indexPath.row)
         }
     }
 
@@ -76,25 +76,23 @@ class GoodsCategoryManagementViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return units.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        let category = categories[indexPath.row]
-        cell.textLabel?.text = category.name
+        let unit = units[indexPath.row]
+        cell.textLabel?.text = unit.name
 
         return cell
     }
     
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let category = categories[indexPath.row]
-        callback?(category)
+        let unit = units[indexPath.row]
+        callback?(unit)
     }
-    
+
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let action = UITableViewRowAction(style: .default, title: "删除") { (action, indexPath) in
             self.delete(indexPath: indexPath)
@@ -107,9 +105,9 @@ class GoodsCategoryManagementViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? AddGoodsCategoryViewController {
-            vc.callback = { c in
-                self.create(category: c, complete: { (success) in
+        if let vc = segue.destination as? AddGoodsUnitViewController {
+            vc.callback = { u in
+                self.create(unit: u, complete: { (success) in
                     if success {
                         vc.navigationController?.popViewController()
                     }

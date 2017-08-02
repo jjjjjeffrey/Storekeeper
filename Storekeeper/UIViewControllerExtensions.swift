@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import JeffreyKit
+import PKHUD
 
 extension UIViewController {
     
@@ -28,4 +29,12 @@ extension UIViewController {
         rightSpacer.width = -10
         navigationItem.rightBarButtonItems?.insert(rightSpacer, at: 0)
     }
+}
+
+extension UIViewController {
+    
+    func showErrorHud(message: String) {
+        HUD.flash(.labeledError(title: "提示", subtitle: message), delay: 1.5)
+    }
+    
 }

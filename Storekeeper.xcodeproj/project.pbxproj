@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		067502D4EAFB9B8A606BA02D /* Pods_Storekeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FE374A72EC55F6C95DDCA2 /* Pods_Storekeeper.framework */; };
-		7B161B481F21E19500EFB1B8 /* GoodsCategoryManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B161B471F21E19500EFB1B8 /* GoodsCategoryManagementViewController.swift */; };
-		7B161B4A1F21E23100EFB1B8 /* GoodsUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B161B491F21E23100EFB1B8 /* GoodsUnitViewController.swift */; };
+		7B161B481F21E19500EFB1B8 /* GoodsCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B161B471F21E19500EFB1B8 /* GoodsCategoriesViewController.swift */; };
+		7B161B4A1F21E23100EFB1B8 /* GoodsUnitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B161B491F21E23100EFB1B8 /* GoodsUnitsViewController.swift */; };
 		7B2BFE621F0E1C5900F0FDB4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2BFE611F0E1C5900F0FDB4 /* Home.storyboard */; };
 		7B2BFE641F0E240300F0FDB4 /* BarcodeSaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */; };
 		7B2BFE841F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */; };
@@ -17,6 +17,8 @@
 		7B36179C1F0E12B4004E7850 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179A1F0E12B4004E7850 /* Main.storyboard */; };
 		7B36179E1F0E12B4004E7850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179D1F0E12B4004E7850 /* Assets.xcassets */; };
 		7B3617A11F0E12B4004E7850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36179F1F0E12B4004E7850 /* LaunchScreen.storyboard */; };
+		7B3698C71F318B41006DA3CF /* GoodsUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3698C61F318B41006DA3CF /* GoodsUnit.swift */; };
+		7B3698C91F318D9B006DA3CF /* AddGoodsUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3698C81F318D9B006DA3CF /* AddGoodsUnitViewController.swift */; };
 		7B6140341F21958D0022C994 /* OrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6140331F21958D0022C994 /* OrderListTableViewController.swift */; };
 		7B62F9641F20521900A064E0 /* SKNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */; };
 		7B7B4C1B1F2988BE0021FE02 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B4C1A1F2988BE0021FE02 /* RegisterViewController.swift */; };
@@ -51,8 +53,8 @@
 /* Begin PBXFileReference section */
 		37BEA18C78F13F33A5C526FC /* Pods-Storekeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storekeeper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Storekeeper/Pods-Storekeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		39FE374A72EC55F6C95DDCA2 /* Pods_Storekeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storekeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B161B471F21E19500EFB1B8 /* GoodsCategoryManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCategoryManagementViewController.swift; sourceTree = "<group>"; };
-		7B161B491F21E23100EFB1B8 /* GoodsUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsUnitViewController.swift; sourceTree = "<group>"; };
+		7B161B471F21E19500EFB1B8 /* GoodsCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCategoriesViewController.swift; sourceTree = "<group>"; };
+		7B161B491F21E23100EFB1B8 /* GoodsUnitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsUnitsViewController.swift; sourceTree = "<group>"; };
 		7B2BFE611F0E1C5900F0FDB4 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		7B2BFE631F0E240300F0FDB4 /* BarcodeSaleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeSaleViewController.swift; sourceTree = "<group>"; };
 		7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCategoryPickerViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,8 @@
 		7B36179D1F0E12B4004E7850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B3617A01F0E12B4004E7850 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B3617A21F0E12B4004E7850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B3698C61F318B41006DA3CF /* GoodsUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsUnit.swift; sourceTree = "<group>"; };
+		7B3698C81F318D9B006DA3CF /* AddGoodsUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoodsUnitViewController.swift; sourceTree = "<group>"; };
 		7B6140331F21958D0022C994 /* OrderListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListTableViewController.swift; sourceTree = "<group>"; };
 		7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNavigationViewController.swift; sourceTree = "<group>"; };
 		7B7B4C1A1F2988BE0021FE02 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -214,9 +218,10 @@
 				7BAD1FCE1F30629D0074F71C /* AddGoodsVarietyViewController.swift */,
 				7BE3910F1F171FB5003524DB /* GoodsSelectViewController.swift */,
 				7BE391131F172A24003524DB /* GoodsSelectedPoolViewController.swift */,
-				7B161B471F21E19500EFB1B8 /* GoodsCategoryManagementViewController.swift */,
+				7B161B471F21E19500EFB1B8 /* GoodsCategoriesViewController.swift */,
 				7BAD1FCC1F301D160074F71C /* AddGoodsCategoryViewController.swift */,
-				7B161B491F21E23100EFB1B8 /* GoodsUnitViewController.swift */,
+				7B161B491F21E23100EFB1B8 /* GoodsUnitsViewController.swift */,
+				7B3698C81F318D9B006DA3CF /* AddGoodsUnitViewController.swift */,
 				7B2BFE831F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift */,
 				7BFF2B421F15EA460062FCC7 /* Goods.storyboard */,
 			);
@@ -246,6 +251,7 @@
 			children = (
 				7BA659D21F287D5100574BEF /* User.swift */,
 				7BAD1FC81F3014E80074F71C /* GoodsCategory.swift */,
+				7B3698C61F318B41006DA3CF /* GoodsUnit.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -407,10 +413,10 @@
 				7B7B4C1D1F299F9D0021FE02 /* RegisterDoneViewController.swift in Sources */,
 				7BACDFF41F1626C5000306A7 /* PutInStorageViewController.swift in Sources */,
 				7B2BFE641F0E240300F0FDB4 /* BarcodeSaleViewController.swift in Sources */,
-				7B161B4A1F21E23100EFB1B8 /* GoodsUnitViewController.swift in Sources */,
+				7B161B4A1F21E23100EFB1B8 /* GoodsUnitsViewController.swift in Sources */,
 				7BA659DD1F287EE300574BEF /* API.swift in Sources */,
 				7BE391101F171FB5003524DB /* GoodsSelectViewController.swift in Sources */,
-				7B161B481F21E19500EFB1B8 /* GoodsCategoryManagementViewController.swift in Sources */,
+				7B161B481F21E19500EFB1B8 /* GoodsCategoriesViewController.swift in Sources */,
 				7BA659D91F287DF400574BEF /* Global.swift in Sources */,
 				7BA659D51F287D7300574BEF /* Cache.swift in Sources */,
 				7B3617971F0E12B4004E7850 /* AppDelegate.swift in Sources */,
@@ -427,10 +433,12 @@
 				7BAD1FCF1F30629D0074F71C /* AddGoodsVarietyViewController.swift in Sources */,
 				7BA659DB1F287EAA00574BEF /* UIViewControllerExtensions.swift in Sources */,
 				7BA612E51F0E74BE0066017F /* SaleViewController.swift in Sources */,
+				7B3698C71F318B41006DA3CF /* GoodsUnit.swift in Sources */,
 				7BAD1FC91F3014E80074F71C /* GoodsCategory.swift in Sources */,
 				7BAD1FCB1F3016C40074F71C /* MineTableViewController.swift in Sources */,
 				7B7B4C1B1F2988BE0021FE02 /* RegisterViewController.swift in Sources */,
 				7BA659CC1F287B7B00574BEF /* SKTabBarViewController.swift in Sources */,
+				7B3698C91F318D9B006DA3CF /* AddGoodsUnitViewController.swift in Sources */,
 				7BA659D31F287D5100574BEF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

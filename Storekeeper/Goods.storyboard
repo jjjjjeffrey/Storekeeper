@@ -764,8 +764,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2B-Xc-8Yo">
-                                                    <rect key="frame" x="326.5" y="21" width="15.5" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2B-Xc-8Yo">
+                                                    <rect key="frame" x="296" y="21" width="46" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -855,6 +855,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoryLabel" destination="Rtk-gO-7Lo" id="2J1-nF-xgm"/>
+                        <outlet property="unitLabel" destination="C2B-Xc-8Yo" id="FtC-wQ-ezq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WGy-Js-dxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -864,7 +865,7 @@
         <!--商品类别-->
         <scene sceneID="V2E-kI-GP6">
             <objects>
-                <tableViewController id="YSB-v8-ePz" customClass="GoodsCategoryManagementViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="YSB-v8-ePz" customClass="GoodsCategoriesViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bty-sZ-QmK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -923,7 +924,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGN-bH-N1k">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入类别名称（如‘酒水’）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGN-bH-N1k">
                                                     <rect key="frame" x="15" y="0.0" width="345" height="59.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -968,7 +969,7 @@
         <!--商品单位-->
         <scene sceneID="PLH-CA-Arz">
             <objects>
-                <tableViewController id="evo-F7-NLa" customClass="GoodsUnitViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="evo-F7-NLa" customClass="GoodsUnitsViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wrd-LZ-wLU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -998,12 +999,76 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="商品单位" id="KS1-Oi-nXj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="u0E-8o-mnt"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="u0E-8o-mnt">
+                            <connections>
+                                <segue destination="yrl-s5-GaD" kind="show" id="5ph-4B-Kc3"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lpx-r2-cRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2982" y="123"/>
+        </scene>
+        <!--新增单位-->
+        <scene sceneID="0Bv-Dt-Mpk">
+            <objects>
+                <tableViewController id="yrl-s5-GaD" customClass="AddGoodsUnitViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="r1a-Cg-UWb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="fVz-GB-avD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X8N-OJ-OpD">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X8N-OJ-OpD" id="ZLk-Nr-sbC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入单位名称（如‘斤’）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lgd-FH-S9a">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="59.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="editingDidChanged:" destination="yrl-s5-GaD" eventType="editingChanged" id="2UV-xG-qxG"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lgd-FH-S9a" firstAttribute="leading" secondItem="ZLk-Nr-sbC" secondAttribute="leading" constant="15" id="3ZB-yt-hjR"/>
+                                                <constraint firstAttribute="trailing" secondItem="lgd-FH-S9a" secondAttribute="trailing" constant="15" id="5J5-I2-OGs"/>
+                                                <constraint firstItem="lgd-FH-S9a" firstAttribute="top" secondItem="ZLk-Nr-sbC" secondAttribute="top" id="C80-aI-byC"/>
+                                                <constraint firstAttribute="bottom" secondItem="lgd-FH-S9a" secondAttribute="bottom" id="O0O-bJ-gqN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="yrl-s5-GaD" id="TdI-Iv-Qcv"/>
+                            <outlet property="delegate" destination="yrl-s5-GaD" id="hHk-bF-Tzu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="新增单位" id="LF8-rQ-W7G">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="5HP-e5-kcK">
+                            <connections>
+                                <action selector="saveButtonClicked:" destination="yrl-s5-GaD" id="Tvb-wH-CtK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="5HP-e5-kcK" id="ghQ-sT-9su"/>
+                        <outlet property="textField" destination="lgd-FH-S9a" id="sMn-h0-XQR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8y-I0-WpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3812" y="123"/>
         </scene>
         <!--Goods Category Picker View Controller-->
         <scene sceneID="RPx-NC-lSV">
