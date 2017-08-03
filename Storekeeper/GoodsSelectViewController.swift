@@ -9,8 +9,12 @@
 import UIKit
 import SwifterSwift
 
-class GoodsSelectViewController: UIViewController {
+class GoodsSelectViewController: UIViewController, SeguePerformable {
 
+    enum Segue: String {
+        case showGoodsKeyboard
+    }
+    
     var categories: [GoodsCategory] = [] {
         didSet {
             selectedCategory = categories.item(at: 0)
@@ -33,6 +37,8 @@ class GoodsSelectViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    
+    var selectedGoods: Goods?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -86,6 +92,8 @@ class GoodsSelectViewController: UIViewController {
                 vc.navigationController?.popViewController()
                 self.selectedCategory = c
             }
+        } else if let vc = segue.destination as? GoodsKeyboardViewController {
+            vc.goods = selectedGoods
         }
     }
     
@@ -119,8 +127,12 @@ extension GoodsSelectViewController: UITableViewDataSource {
 extension GoodsSelectViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //解决cell点击事件延迟的bug
-        tableView.deselectRow(at: indexPath, animated: false)
+        
+        selectedGoods = goods[indexPath.row]
+        
+        DispatchQueue.main.async {
+            self.perform(segue: Segue.showGoodsKeyboard, sender: self)
+        }
         
         
     }

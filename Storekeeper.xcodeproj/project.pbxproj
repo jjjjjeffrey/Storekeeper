@@ -25,6 +25,7 @@
 		7B6DC6971F31C311001F85F6 /* GoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6DC6961F31C311001F85F6 /* GoodsTableViewCell.swift */; };
 		7B7B4C1B1F2988BE0021FE02 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B4C1A1F2988BE0021FE02 /* RegisterViewController.swift */; };
 		7B7B4C1D1F299F9D0021FE02 /* RegisterDoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B4C1C1F299F9D0021FE02 /* RegisterDoneViewController.swift */; };
+		7B9F9B911F330F69002794CD /* GoodsKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F9B901F330F69002794CD /* GoodsKeyboardViewController.swift */; };
 		7BA42ED31F15B2DD00F9344B /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */; };
 		7BA42ED61F15BE5B00F9344B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */; };
 		7BA42ED81F15C22C00F9344B /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA42ED71F15C22C00F9344B /* Mine.storyboard */; };
@@ -74,6 +75,7 @@
 		7B6DC6961F31C311001F85F6 /* GoodsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsTableViewCell.swift; sourceTree = "<group>"; };
 		7B7B4C1A1F2988BE0021FE02 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B7B4C1C1F299F9D0021FE02 /* RegisterDoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterDoneViewController.swift; sourceTree = "<group>"; };
+		7B9F9B901F330F69002794CD /* GoodsKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsKeyboardViewController.swift; sourceTree = "<group>"; };
 		7BA42ED21F15B2DD00F9344B /* MembersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MembersTableViewController.swift; sourceTree = "<group>"; };
 		7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7BA42ED71F15C22C00F9344B /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				7BE3910F1F171FB5003524DB /* GoodsSelectViewController.swift */,
 				7BAD1FCE1F30629D0074F71C /* AddGoodsVarietyViewController.swift */,
 				7B6DC6961F31C311001F85F6 /* GoodsTableViewCell.swift */,
+				7B9F9B901F330F69002794CD /* GoodsKeyboardViewController.swift */,
 				7BE391131F172A24003524DB /* GoodsSelectedPoolViewController.swift */,
 				7B161B471F21E19500EFB1B8 /* GoodsCategoriesViewController.swift */,
 				7BAD1FCC1F301D160074F71C /* AddGoodsCategoryViewController.swift */,
@@ -445,6 +448,7 @@
 				7BAD1FC91F3014E80074F71C /* GoodsCategory.swift in Sources */,
 				7BAD1FCB1F3016C40074F71C /* MineTableViewController.swift in Sources */,
 				7B7B4C1B1F2988BE0021FE02 /* RegisterViewController.swift in Sources */,
+				7B9F9B911F330F69002794CD /* GoodsKeyboardViewController.swift in Sources */,
 				7BA659CC1F287B7B00574BEF /* SKTabBarViewController.swift in Sources */,
 				7B3698C91F318D9B006DA3CF /* AddGoodsUnitViewController.swift in Sources */,
 				7BA659D31F287D5100574BEF /* User.swift in Sources */,
