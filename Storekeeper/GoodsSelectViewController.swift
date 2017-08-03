@@ -81,6 +81,11 @@ class GoodsSelectViewController: UIViewController {
             vc.callback = { c in
                 self.selectedCategory = c
             }
+        } else if let vc = segue.destination as? AddGoodsVarietyViewController {
+            vc.callback = { c, g in
+                vc.navigationController?.popViewController()
+                self.selectedCategory = c
+            }
         }
     }
     

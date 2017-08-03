@@ -43,6 +43,8 @@ class AddGoodsVarietyViewController: UITableViewController {
     var goods = Goods()
     
     
+    var callback: ((GoodsCategory, Goods) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -84,7 +86,8 @@ class AddGoodsVarietyViewController: UITableViewController {
                 return self.showErrorHud(message: response?.message ?? "保存失败")
             }
             HUD.flash(.success, delay: 0.7)
-            self.navigationController?.popViewController()
+            
+            self.callback?(self.category!, self.goods)
         }
     }
 
