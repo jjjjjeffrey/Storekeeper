@@ -627,6 +627,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="Soq-XC-pY2">
                         <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="liL-7K-APx">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="分类">
+                                <color key="titleColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <segue destination="3WU-GK-poL" kind="presentation" id="WCd-pi-nTz"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FRf-Tv-rJH">
                             <connections>
                                 <segue destination="eLN-Jr-DbW" kind="show" id="xi1-W1-1UW"/>
@@ -634,6 +645,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoryButton" destination="liL-7K-APx" id="JGg-ng-bA5"/>
                         <outlet property="tableView" destination="d7s-ux-n5L" id="YCC-Nk-w9s"/>
                     </connections>
                 </viewController>
@@ -645,7 +657,7 @@
         <scene sceneID="reV-52-Xfa">
             <objects>
                 <tableViewController id="eLN-Jr-DbW" customClass="AddGoodsVarietyViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="3Pb-om-VBo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="3Pb-om-VBo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -670,6 +682,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="eLN-Jr-DbW" eventType="editingChanged" id="ZI5-dt-pCt"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -700,6 +715,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="eLN-Jr-DbW" eventType="editingChanged" id="7Et-hd-POy"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -795,7 +813,10 @@
                                                     <rect key="frame" x="95" y="0.0" width="265" height="59.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="eLN-Jr-DbW" eventType="editingChanged" id="B1D-ln-dd0"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -825,7 +846,10 @@
                                                     <rect key="frame" x="60" y="0.0" width="300" height="59.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="eLN-Jr-DbW" eventType="editingChanged" id="yvU-JA-Ckr"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -847,10 +871,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="新增商品" id="DgR-8y-TK3">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="r2J-4F-3OK"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="r2J-4F-3OK">
+                            <connections>
+                                <action selector="saveButtonClicked:" destination="eLN-Jr-DbW" id="mVG-M1-7p2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="barcodeField" destination="9d8-bj-jfm" id="ron-Sz-jru"/>
                         <outlet property="categoryLabel" destination="Rtk-gO-7Lo" id="2J1-nF-xgm"/>
+                        <outlet property="nameField" destination="bGL-eR-9J5" id="5sC-z8-iMx"/>
+                        <outlet property="priceField" destination="8gK-du-V3Y" id="ih0-eD-XMw"/>
+                        <outlet property="stockField" destination="9Oi-n0-uuq" id="NAP-Qq-C8k"/>
                         <outlet property="unitLabel" destination="C2B-Xc-8Yo" id="FtC-wQ-ezq"/>
                     </connections>
                 </tableViewController>

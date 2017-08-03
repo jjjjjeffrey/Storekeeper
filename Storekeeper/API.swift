@@ -177,3 +177,17 @@ struct APIGoods: HTTPRequest {
     }
 }
 
+struct APIAddGoods: HTTPRequest {
+    
+    typealias Response = AppResponse<[Goods]>
+    
+    var path: String = "/goods"
+    
+    let method: HTTPMethod = .post
+    var parameter: [String: Any] = [:]
+    
+    init(goods: Goods) {
+        parameter = goods.toJSON() ?? [:]
+    }
+}
+
