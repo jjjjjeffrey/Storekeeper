@@ -163,4 +163,31 @@ struct APIDeleteGoodsUnit: HTTPRequest {
     }
 }
 
+struct APIGoods: HTTPRequest {
+    
+    typealias Response = AppResponse<[Goods]>
+    
+    var path: String = "/goods"
+    
+    let method: HTTPMethod = .get
+    var parameter: [String: Any] = [:]
+    
+    init(category: GoodsCategory) {
+        parameter["category"] = category.name
+    }
+}
+
+struct APIAddGoods: HTTPRequest {
+    
+    typealias Response = AppResponse<[Goods]>
+    
+    var path: String = "/goods"
+    
+    let method: HTTPMethod = .post
+    var parameter: [String: Any] = [:]
+    
+    init(goods: Goods) {
+        parameter = goods.toJSON() ?? [:]
+    }
+}
 

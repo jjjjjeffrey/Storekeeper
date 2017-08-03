@@ -574,7 +574,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SomeLongIdentifierCell" id="lck-qD-9xi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GoodsTableViewCell" id="lck-qD-9xi" customClass="GoodsTableViewCell" customModule="Storekeeper" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lck-qD-9xi" id="ITB-3q-xy1">
@@ -582,7 +582,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KQu-LK-256">
-                                                    <rect key="frame" x="15" y="8.5" width="86.5" height="43.5"/>
+                                                    <rect key="frame" x="15" y="8" width="86.5" height="43.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恰恰瓜子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9D-cf-cyU">
                                                             <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -605,6 +605,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="nameLabel" destination="t9D-cf-cyU" id="d71-IU-1ai"/>
+                                            <outlet property="stockLabel" destination="a68-bN-9MY" id="p9K-el-d0I"/>
                                             <segue destination="Kef-LF-wNI" kind="presentation" id="Mc4-YO-nlg"/>
                                         </connections>
                                     </tableViewCell>
@@ -625,13 +627,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="Soq-XC-pY2">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Ll-Bd-gKb">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="liL-7K-APx">
                             <rect key="frame" x="112.5" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="零食干货"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="分类">
+                                <color key="titleColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                             <connections>
-                                <segue destination="3WU-GK-poL" kind="presentation" id="Y19-gV-xUo"/>
+                                <segue destination="3WU-GK-poL" kind="presentation" id="WCd-pi-nTz"/>
                             </connections>
                         </button>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FRf-Tv-rJH">
@@ -640,6 +644,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoryButton" destination="liL-7K-APx" id="JGg-ng-bA5"/>
+                        <outlet property="tableView" destination="d7s-ux-n5L" id="YCC-Nk-w9s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oeG-jK-3KT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -649,7 +657,7 @@
         <scene sceneID="reV-52-Xfa">
             <objects>
                 <tableViewController id="eLN-Jr-DbW" customClass="AddGoodsVarietyViewController" customModule="Storekeeper" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="3Pb-om-VBo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" rowHeight="60" sectionHeaderHeight="18" sectionFooterHeight="18" id="3Pb-om-VBo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -674,6 +682,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="eLN-Jr-DbW" eventType="editingChanged" id="ZI5-dt-pCt"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -704,6 +715,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="eLN-Jr-DbW" eventType="editingChanged" id="7Et-hd-POy"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -799,7 +813,10 @@
                                                     <rect key="frame" x="95" y="0.0" width="265" height="59.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="eLN-Jr-DbW" eventType="editingChanged" id="B1D-ln-dd0"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -829,7 +846,10 @@
                                                     <rect key="frame" x="60" y="0.0" width="300" height="59.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="eLN-Jr-DbW" eventType="editingChanged" id="yvU-JA-Ckr"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -851,10 +871,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="新增商品" id="DgR-8y-TK3">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="r2J-4F-3OK"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="r2J-4F-3OK">
+                            <connections>
+                                <action selector="saveButtonClicked:" destination="eLN-Jr-DbW" id="mVG-M1-7p2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="barcodeField" destination="9d8-bj-jfm" id="ron-Sz-jru"/>
                         <outlet property="categoryLabel" destination="Rtk-gO-7Lo" id="2J1-nF-xgm"/>
+                        <outlet property="nameField" destination="bGL-eR-9J5" id="5sC-z8-iMx"/>
+                        <outlet property="priceField" destination="8gK-du-V3Y" id="ih0-eD-XMw"/>
+                        <outlet property="stockField" destination="9Oi-n0-uuq" id="NAP-Qq-C8k"/>
                         <outlet property="unitLabel" destination="C2B-Xc-8Yo" id="FtC-wQ-ezq"/>
                     </connections>
                 </tableViewController>
@@ -1099,6 +1127,7 @@
                                         </constraints>
                                         <state key="normal" title="完成"/>
                                         <connections>
+                                            <action selector="doneButtonClicked:" destination="3WU-GK-poL" eventType="touchUpInside" id="Shq-6b-1WA"/>
                                             <segue destination="JwT-7a-pAq" kind="unwind" unwindAction="dismissCurrentViewController:" id="M0H-w3-zXx"/>
                                         </connections>
                                     </button>
