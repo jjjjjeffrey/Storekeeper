@@ -50,8 +50,15 @@ class GoodsKeyboardViewController: AnimatableModalViewController {
         didSet {
             countButton.setTitleForAllStates("\(count)\(goods?.unit ?? "")")
         }
+        
+        
     }
-    var price = ""
+    var price = "" {
+        didSet {
+            priceButton.setTitleForAllStates("¥ \(Double(price) ?? 0.00)")
+        }
+    }
+    
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countButton: UIButton!
@@ -63,7 +70,7 @@ class GoodsKeyboardViewController: AnimatableModalViewController {
 
         nameLabel.text = goods?.name
         countButton.setTitleForAllStates("0\(goods?.unit ?? "")")
-        priceButton.setTitleForAllStates("¥ 0.00")
+        priceButton.setTitleForAllStates("¥ 0.0")
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,6 +83,8 @@ class GoodsKeyboardViewController: AnimatableModalViewController {
         
         if status == .count {
             handleCountButtonKeyboard(bt: bt)
+        } else {
+            handlePriceButtonKeyboard(bt: bt)
         }
     }
     
@@ -113,12 +122,60 @@ class GoodsKeyboardViewController: AnimatableModalViewController {
         case .clear:
             count = "0"
         case .confirm:
-            return
+            confirmButtonClicked()
         default:
             return
         }
     }
     
+    func handlePriceButtonKeyboard(bt: KeyboardButton) {
+        switch bt {
+        case let .number(n):
+            let new = price + "\(n)"
+            guard new.isPrice else {
+                return
+            }
+            
+            guard Double(new) ?? 0.00 < 1000000.00 else {
+                return
+            }
+            price = new
+        case .dot:
+            let new = price + "."
+            guard new.isPrice else {
+                return
+            }
+            price = new
+        case .delete:
+            var new = String(price.characters.dropLast())
+            guard new.length > 0 else {
+                return price = ""
+            }
+            if let dot = new.characters.last, dot == "." {
+                new = String(new.characters.dropLast())
+            }
+            
+            guard new.isPrice else {
+                return
+            }
+            price = new
+        case .clear:
+            price = ""
+        case .confirm:
+            confirmButtonClicked()
+        default:
+            return
+        }
+    }
+    
+    func confirmButtonClicked() {
+        guard let c = Int(count), c != 0 else {
+            return showErrorHud(message: "请输入数量")
+        }
+        guard let p = Double(price), p != 0.00 else {
+            return showErrorHud(message: "请输入价格")
+        }
+    }
     
 
     /*
@@ -131,4 +188,26 @@ class GoodsKeyboardViewController: AnimatableModalViewController {
     }
     */
 
+}
+
+extension String {
+    
+    var isPrice: Bool {
+        get {
+            guard let _ = Double(self) else {
+                return false
+            }
+            
+            let parts = self.components(separatedBy: ".")
+            if parts.count > 1 {
+                let part2 = parts[1]
+                if part2.characters.count > 2 {
+                    return false
+                }
+            }
+            
+            return true
+        }
+    }
+    
 }
