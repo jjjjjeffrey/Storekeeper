@@ -42,7 +42,6 @@
 		7BA659DB1F287EAA00574BEF /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA659DA1F287EAA00574BEF /* UIViewControllerExtensions.swift */; };
 		7BA659DD1F287EE300574BEF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA659DC1F287EE300574BEF /* API.swift */; };
 		7BA659DF1F28817B00574BEF /* SeguePerformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA659DE1F28817B00574BEF /* SeguePerformable.swift */; };
-		7BACDFF41F1626C5000306A7 /* PutInStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */; };
 		7BAD1FC91F3014E80074F71C /* GoodsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD1FC81F3014E80074F71C /* GoodsCategory.swift */; };
 		7BAD1FCB1F3016C40074F71C /* MineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD1FCA1F3016C40074F71C /* MineTableViewController.swift */; };
 		7BAD1FCD1F301D160074F71C /* AddGoodsCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD1FCC1F301D160074F71C /* AddGoodsCategoryViewController.swift */; };
@@ -93,7 +92,6 @@
 		7BA659DA1F287EAA00574BEF /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		7BA659DC1F287EE300574BEF /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7BA659DE1F28817B00574BEF /* SeguePerformable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeguePerformable.swift; sourceTree = "<group>"; };
-		7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutInStorageViewController.swift; sourceTree = "<group>"; };
 		7BAD1FC81F3014E80074F71C /* GoodsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCategory.swift; sourceTree = "<group>"; };
 		7BAD1FCA1F3016C40074F71C /* MineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineTableViewController.swift; sourceTree = "<group>"; };
 		7BAD1FCC1F301D160074F71C /* AddGoodsCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoodsCategoryViewController.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 		7BAD1FC41F3013E70074F71C /* GoodsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7BACDFF31F1626C5000306A7 /* PutInStorageViewController.swift */,
 				7BE3910F1F171FB5003524DB /* GoodsSelectViewController.swift */,
 				7BAD1FCE1F30629D0074F71C /* AddGoodsVarietyViewController.swift */,
 				7B6DC6961F31C311001F85F6 /* GoodsTableViewCell.swift */,
@@ -422,7 +419,6 @@
 				7BAD1FCD1F301D160074F71C /* AddGoodsCategoryViewController.swift in Sources */,
 				7B2BFE841F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift in Sources */,
 				7B7B4C1D1F299F9D0021FE02 /* RegisterDoneViewController.swift in Sources */,
-				7BACDFF41F1626C5000306A7 /* PutInStorageViewController.swift in Sources */,
 				7B6DC6951F31C03E001F85F6 /* Goods.swift in Sources */,
 				7B2BFE641F0E240300F0FDB4 /* BarcodeSaleViewController.swift in Sources */,
 				7B161B4A1F21E23100EFB1B8 /* GoodsUnitsViewController.swift in Sources */,

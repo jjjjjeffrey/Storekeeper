@@ -59,6 +59,7 @@ class GoodsKeyboardViewController: AnimatableModalViewController {
         }
     }
     
+    var callback: ((Int, Double) -> Void)?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countButton: UIButton!
@@ -175,6 +176,8 @@ class GoodsKeyboardViewController: AnimatableModalViewController {
         guard let p = Double(price), p != 0.00 else {
             return showErrorHud(message: "请输入价格")
         }
+        
+        callback?(c, p)
     }
     
 

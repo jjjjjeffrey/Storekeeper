@@ -508,10 +508,10 @@
             </objects>
             <point key="canvasLocation" x="1457" y="1612"/>
         </scene>
-        <!--PutInStorageViewController-->
+        <!--GoodsSelectViewController-->
         <scene sceneID="mRB-d9-twv">
             <objects>
-                <viewControllerPlaceholder storyboardName="Goods" referencedIdentifier="PutInStorageViewController" id="zQg-xE-Ypb" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Goods" referencedIdentifier="GoodsSelectViewController" id="zQg-xE-Ypb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrT-0G-JHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="538" y="676"/>
