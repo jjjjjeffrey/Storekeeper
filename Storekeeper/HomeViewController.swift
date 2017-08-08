@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 import IBAnimatable
+import PKHUD
 
 class HomeViewController: UIViewController {
     
@@ -38,16 +39,32 @@ class HomeViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? GoodsSelectViewController {
+            vc.callback = { c, p, g, callback in
+                var stock = GoodsStock()
+                stock.count = c
+                stock.price = p
+                stock.goodsId = g.id
+                stock.goodsName = g.name
+
+                HUD.show(.progress)
+                let req = APIAddGoodsStock(stock: stock)
+                self.httpClient.send(req, handler: { (response) in
+                    guard let c = response?.code, c == 0 else {
+                        return self.showErrorHud(message: response?.message ?? "保存失败")
+                    }
+                    callback(true)
+                    HUD.flash(.success, delay: 0.7)
+                })
+            }
+            
+        }
     }
-    */
-    
     
 
 }

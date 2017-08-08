@@ -71,7 +71,11 @@ class GoodsKeyboardViewController: AnimatableModalViewController {
 
         nameLabel.text = goods?.name
         countButton.setTitleForAllStates("0\(goods?.unit ?? "")")
-        priceButton.setTitleForAllStates("¥ 0.0")
+
+        
+        
+        
+        price = "\(goods?.sellPrice ?? 0.00)"
     }
 
     override func didReceiveMemoryWarning() {

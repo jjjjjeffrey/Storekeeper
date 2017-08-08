@@ -40,6 +40,10 @@ class GoodsSelectViewController: UIViewController, SeguePerformable {
     
     var selectedGoods: Goods?
     
+    
+    typealias Success = (Bool) -> Void
+    var callback: ((Int, Double, Goods, @escaping Success) -> Void)?
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var categoryButton: UIButton!
@@ -94,6 +98,14 @@ class GoodsSelectViewController: UIViewController, SeguePerformable {
             }
         } else if let vc = segue.destination as? GoodsKeyboardViewController {
             vc.goods = selectedGoods
+            vc.callback = { c, p in
+                self.callback?(c, p, self.selectedGoods!) { success in
+                    if success {
+                        self.loadCategories()
+                    }
+                }
+                vc.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
