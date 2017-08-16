@@ -1,5 +1,4 @@
 PODS:
-  - AFDateHelper (4.2.2)
   - Alamofire (4.5.0)
   - Charts (3.0.2):
     - Charts/Core (= 3.0.2)
@@ -18,12 +17,12 @@ PODS:
   - Kingfisher (3.10.3)
   - PKHUD (4.2.3)
   - SnapKit (3.2.0)
+  - SwiftDate (4.1.6)
   - SwifterSwift (1.6.4)
   - SwiftQRCode (3.0.2)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - AFDateHelper (~> 4.0)
   - Alamofire (~> 4.0)
   - Charts (~> 3.0)
   - CryptoSwift
@@ -34,12 +33,12 @@ DEPENDENCIES:
   - Kingfisher (~> 3.0)
   - PKHUD (~> 4.0)
   - SnapKit (~> 3.0)
+  - SwiftDate (~> 4.0)
   - SwifterSwift (~> 1.0)
   - SwiftQRCode (~> 3.0)
   - SwiftyJSON (~> 3.0)
 
 SPEC CHECKSUMS:
-  AFDateHelper: 0f9588a442b4d7ef862568ae5d40ab883672efb5
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
   CryptoSwift: a22f6ba238e9ce4d26ee7bf45b9ed82e7122d4a0
@@ -50,10 +49,11 @@ SPEC CHECKSUMS:
   Kingfisher: a0ac82dc5bcf0388dd74b294cf2cc13730c63436
   PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SwiftDate: 6bae71add23ce9f16ec2be3a521b21000da5804b
   SwifterSwift: 92c73c47c3cbf7d5f788adf6459bf07b5d23d3fb
   SwiftQRCode: 280589699d84195c2c573011aa52f2c015c31c34
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 1e78148e1dd5f6ec3ccf6f22138d0536d0bb56a6
+PODFILE CHECKSUM: e40b1dd17a2a417770b78242cdda108e957e02d9
 
 COCOAPODS: 1.2.1

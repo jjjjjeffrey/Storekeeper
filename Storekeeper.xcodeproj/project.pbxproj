@@ -20,6 +20,8 @@
 		7B3698C71F318B41006DA3CF /* GoodsUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3698C61F318B41006DA3CF /* GoodsUnit.swift */; };
 		7B3698C91F318D9B006DA3CF /* AddGoodsUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3698C81F318D9B006DA3CF /* AddGoodsUnitViewController.swift */; };
 		7B6140341F21958D0022C994 /* OrderListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6140331F21958D0022C994 /* OrderListTableViewController.swift */; };
+		7B6154111F43D69700916F17 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6154101F43D69700916F17 /* Timeline.swift */; };
+		7B6154131F43DD3400916F17 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6154121F43DD3400916F17 /* TimelineTableViewCell.swift */; };
 		7B62F9641F20521900A064E0 /* SKNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */; };
 		7B6DC6951F31C03E001F85F6 /* Goods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6DC6941F31C03E001F85F6 /* Goods.swift */; };
 		7B6DC6971F31C311001F85F6 /* GoodsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6DC6961F31C311001F85F6 /* GoodsTableViewCell.swift */; };
@@ -70,6 +72,8 @@
 		7B3698C61F318B41006DA3CF /* GoodsUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsUnit.swift; sourceTree = "<group>"; };
 		7B3698C81F318D9B006DA3CF /* AddGoodsUnitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoodsUnitViewController.swift; sourceTree = "<group>"; };
 		7B6140331F21958D0022C994 /* OrderListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListTableViewController.swift; sourceTree = "<group>"; };
+		7B6154101F43D69700916F17 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		7B6154121F43DD3400916F17 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		7B62F9631F20521900A064E0 /* SKNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKNavigationViewController.swift; sourceTree = "<group>"; };
 		7B6DC6941F31C03E001F85F6 /* Goods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goods.swift; sourceTree = "<group>"; };
 		7B6DC6961F31C311001F85F6 /* GoodsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsTableViewCell.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			children = (
 				7B2BFE611F0E1C5900F0FDB4 /* Home.storyboard */,
 				7BA42ED51F15BE5B00F9344B /* HomeViewController.swift */,
+				7B6154121F43DD3400916F17 /* TimelineTableViewCell.swift */,
 			);
 			name = HomeViewController;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				7B3698C61F318B41006DA3CF /* GoodsUnit.swift */,
 				7B6DC6941F31C03E001F85F6 /* Goods.swift */,
 				7BDE74CE1F3961F0002C43C0 /* GoodsStock.swift */,
+				7B6154101F43D69700916F17 /* Timeline.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6154111F43D69700916F17 /* Timeline.swift in Sources */,
 				7BAD1FCD1F301D160074F71C /* AddGoodsCategoryViewController.swift in Sources */,
 				7B2BFE841F0F8A9400F0FDB4 /* GoodsCategoryPickerViewController.swift in Sources */,
 				7B7B4C1D1F299F9D0021FE02 /* RegisterDoneViewController.swift in Sources */,
@@ -437,6 +444,7 @@
 				7B6140341F21958D0022C994 /* OrderListTableViewController.swift in Sources */,
 				7BDE74CF1F3961F0002C43C0 /* GoodsStock.swift in Sources */,
 				7B62F9641F20521900A064E0 /* SKNavigationViewController.swift in Sources */,
+				7B6154131F43DD3400916F17 /* TimelineTableViewCell.swift in Sources */,
 				7BA659CA1F287B1E00574BEF /* LoginViewController.swift in Sources */,
 				7BA659DF1F28817B00574BEF /* SeguePerformable.swift in Sources */,
 				7BA42ED31F15B2DD00F9344B /* MembersTableViewController.swift in Sources */,
@@ -584,6 +592,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeffreyzeng.storekeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -597,6 +606,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeffreyzeng.storekeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

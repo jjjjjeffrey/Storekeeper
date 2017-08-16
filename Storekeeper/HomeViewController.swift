@@ -18,6 +18,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var placeholderImageView: AnimatableImageView!
     
+    var timelines: [Timeline] = [] {
+        didSet {
+            guard timelines.count > 0 else {
+                placeholder.isHidden = false
+                tableView.isHidden = true
+                return
+            }
+            placeholder.isHidden = true
+            tableView.isHidden = false
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +37,24 @@ class HomeViewController: UIViewController {
         tableView.isHidden = true
         mainStackView.addArrangedSubview(placeholder)
         tableView.tableFooterView = UIView()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         placeholderImageView.animate()
+        loadTimeline()
+    }
+    
+    func loadTimeline() {
+        let req = APITimelines()
+        httpClient.send(req) { (response) in
+            guard let c = response?.code, c == 0, let tls = response?.data else {
+                return
+            }
+            self.timelines = tls
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,13 +96,19 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return timelines.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let ide = indexPath.row == 0 ? "Sale" : "Buy"
-        let cell = tableView.dequeueReusableCell(withIdentifier: ide, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath)
         
-        return cell
+        guard let c = cell as? TimelineTableViewCell else {
+            return cell
+        }
+        
+        let timeline = timelines[indexPath.row]
+        c.config(timeline: timeline)
+        
+        return c
     }
 }

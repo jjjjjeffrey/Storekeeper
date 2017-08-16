@@ -19,6 +19,8 @@ typealias Notification = JeffreyKit.Notification
 struct GlobalDefine {
     struct Colors {
         static var main = UIColor(hex: 0x4990e2)
+        static var button = UIColor(hex: 0xFF2D55)
+        static var tint = UIColor(hex: 0xFF9500)
     }
     
     struct Paths {

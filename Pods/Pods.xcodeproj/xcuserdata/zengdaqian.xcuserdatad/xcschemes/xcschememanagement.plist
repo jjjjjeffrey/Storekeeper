@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFDateHelper.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -64,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftDate.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftQRCode.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,17 +82,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>131197F4C44AA24816061F503F7944F8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>17049C7D454E1C5E0FBF8B3FCC9EFF7D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1B09D459DA99385F87A08D149370D6E6</key>
+		<key>07E4A139AC73DB527D6699695F03571F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,7 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>347A4CB32EE8761528D60DFE07BFAC52</key>
+		<key>560E2AEF361D2AFF47F91ADE2D98B7D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +107,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>80A7F790D1DC99E2726C506194A7516F</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>8C63EDC2EE06599C365D84929F6BA0AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DCC6A04150F115764CB5EA0040FF0FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,7 +127,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C33684E5F9B374AA565DB1114C9B3F25</key>
+		<key>C9EA0B6AC2507A61FA26593C3E8AD450</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -148,6 +143,11 @@
 			<true/>
 		</dict>
 		<key>EE5568CD1227C620A2438E52FF5F6D9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F02400904704B6015B32A3A0DE733341</key>
 		<dict>
 			<key>primary</key>
 			<true/>

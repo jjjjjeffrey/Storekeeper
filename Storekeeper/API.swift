@@ -205,3 +205,14 @@ struct APIAddGoodsStock: HTTPRequest {
     }
 }
 
+struct APITimelines: HTTPRequest {
+    
+    typealias Response = AppResponse<[Timeline]>
+    
+    var path: String = "/timeline"
+    
+    let method: HTTPMethod = .get
+    var parameter: [String: Any] = [:]
+
+}
+

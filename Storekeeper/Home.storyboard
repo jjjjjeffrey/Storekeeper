@@ -47,7 +47,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Sale" id="Ybz-uT-dBp">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimelineTableViewCell" id="Ybz-uT-dBp" customClass="TimelineTableViewCell" customModule="Storekeeper" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ybz-uT-dBp" id="kbX-X7-wBL">
@@ -82,7 +82,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 18.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59j-ni-1S1">
                                                                     <rect key="frame" x="0.0" y="25.5" width="156" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <color key="textColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -103,6 +103,12 @@
                                                         <constraint firstItem="yr7-3M-szP" firstAttribute="centerY" secondItem="kbX-X7-wBL" secondAttribute="centerY" id="VHG-Ba-4pC"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="contentLabel" destination="59j-ni-1S1" id="jnw-e0-5JJ"/>
+                                                    <outlet property="dateLabel" destination="9ds-7z-35c" id="RZ8-LJ-43g"/>
+                                                    <outlet property="identifierView" destination="CyN-be-3Pw" id="MjN-xT-eRV"/>
+                                                    <outlet property="titleLabel" destination="t1Q-MK-0Nb" id="wOa-So-Vch"/>
+                                                </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Buy" id="TBL-1n-IRW">
                                                 <rect key="frame" x="0.0" y="88" width="375" height="60"/>
@@ -139,7 +145,7 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 180.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMQ-YD-faT">
                                                                     <rect key="frame" x="0.0" y="25.5" width="156" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <color key="textColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
